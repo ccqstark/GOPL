@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class CameraSpring : MonoBehaviour
 {
-    public float Frequency = 25; // 震动评率
+    public float Frequency = 25; // 震动频率
     public float Damp = 15; // 回归视角中心速度系数
 
     public Vector2 MinRecoilRange; // 最小震动范围
