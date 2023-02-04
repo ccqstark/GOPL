@@ -3733,6 +3733,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1225869093226566633, guid: 49be6fbda10d7b4408a79af568d1341a, type: 3}
+      propertyPath: SmoothTime
+      value: 22
+      objectReference: {fileID: 0}
+    - target: {fileID: 1225869093226566633, guid: 49be6fbda10d7b4408a79af568d1341a, type: 3}
+      propertyPath: MouseSensitivity
+      value: 3.9
+      objectReference: {fileID: 0}
     - target: {fileID: 1228046139790925864, guid: 49be6fbda10d7b4408a79af568d1341a, type: 3}
       propertyPath: m_Name
       value: Assault_Rifle_01_FPSController 1
@@ -11410,11 +11418,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7981290955261062071, guid: 80ddc3d604ea4ed4b96930587f077e44, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.05
+      value: 4.518
       objectReference: {fileID: 0}
     - target: {fileID: 7981290955261062071, guid: 80ddc3d604ea4ed4b96930587f077e44, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -10.46
+      value: -10.474
       objectReference: {fileID: 0}
     - target: {fileID: 7981290955261062071, guid: 80ddc3d604ea4ed4b96930587f077e44, type: 3}
       propertyPath: m_LocalRotation.w

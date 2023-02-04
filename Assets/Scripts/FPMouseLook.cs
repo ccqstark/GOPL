@@ -11,6 +11,7 @@ public class FPMouseLook : MonoBehaviour
 
     public float MouseSensitivity; // 鼠标灵敏度
     public Vector2 MaximumAngle; // 最大角度限制
+    public float SmoothTime; // 平滑参数
 
     public AnimationCurve RecoilCurve;
     public Vector2 RecoilRange;
@@ -43,13 +44,18 @@ public class FPMouseLook : MonoBehaviour
         cameraRotation.y += currentRecoil.y;
         cameraRotation.x -= currentRecoil.x;
         
-        // 限制转动角度
+        // 限制仰视和俯视的角度
         cameraRotation.x = Mathf.Clamp(cameraRotation.x, MaximumAngle.x, MaximumAngle.y);
 
-        // 此方法用于返回欧拉角Vector3(x,y,z)对应的四元数Quaternion
-        cameraTransform.rotation = Quaternion.Euler(cameraRotation.x, cameraRotation.y, 0);
-        // 角色身体也随着视角转动
-        CharacterTransform.rotation = Quaternion.Euler(0, cameraRotation.y, 0);
+        // 此方法用于转换欧拉角Vector3(x,y,z)对应的四元数Quaternion
+        var targetRotationX = Quaternion.Euler(cameraRotation.x, 0, 0);
+        var targetRotationY = Quaternion.Euler(0, cameraRotation.y, 0);
+        
+        // 平滑转动
+        // 相机沿着X轴转动
+        cameraTransform.localRotation = Quaternion.Slerp(cameraTransform.localRotation, targetRotationX, SmoothTime * Time.deltaTime);
+        // 角色身体沿着Y轴转动，相机Y轴方向的视角也随之转动
+        CharacterTransform.localRotation = Quaternion.Slerp(CharacterTransform.localRotation, targetRotationY, SmoothTime * Time.deltaTime);
     }
 
     private void CalculateRecoilOffset()
