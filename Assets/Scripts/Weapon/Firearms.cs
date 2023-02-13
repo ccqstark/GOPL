@@ -8,6 +8,8 @@ namespace Scripts.Weapon
     {
         public Camera EyeCamera; // 相机
         public Camera GunCamera;
+
+        public GameObject CrosshairUI; // 准心UI
         
         public Transform MuzzlePoint; // 枪口位置
         public Transform CasingPoint; // 抛壳位置
@@ -155,6 +157,9 @@ namespace Scripts.Weapon
                     IsAiming ? rigoutScopeInfo.GunCameraPosition : originalEyePosition,
                     ref tmpRefPosition,
                     Time.deltaTime * 2);
+                
+                // 瞄准时隐藏十字准心
+                CrosshairUI.SetActive(!IsAiming);
             }
         }
 
