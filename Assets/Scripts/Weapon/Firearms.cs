@@ -9,7 +9,8 @@ namespace Scripts.Weapon
         public Camera EyeCamera; // 相机
         public Camera GunCamera;
 
-        public GameObject CrosshairUI; // 准心UI
+        public GameObject Crosshair; // 准心UI
+        private CrosshairUI crosshairUI; // 准心UI的脚本控制对象
         
         public Transform MuzzlePoint; // 枪口位置
         public Transform CasingPoint; // 抛壳位置
@@ -74,10 +75,17 @@ namespace Scripts.Weapon
             originalEyePosition = gunCameraTransform.localPosition;
             // 默认瞄具赋值
             rigoutScopeInfo = BaseIronSight;
+            // 准心控制脚本对象
+            crosshairUI = Crosshair.GetComponent<CrosshairUI>();
         }
 
         public void DoAttack()
         {
+            // 腰射时准心扩散
+            if (!IsAiming && CurrentAmmo > 0)
+            {
+                crosshairUI.SetShootingState(true);
+            }
             Shooting();
         }
 
@@ -159,7 +167,7 @@ namespace Scripts.Weapon
                     Time.deltaTime * 2);
                 
                 // 瞄准时隐藏十字准心
-                CrosshairUI.SetActive(!IsAiming);
+                Crosshair.SetActive(!IsAiming);
             }
         }
 
