@@ -14,7 +14,7 @@ public class WeaponManager : MonoBehaviour
     
     public List<Firearms> Arms = new List<Firearms>();
     public Transform WorldCameraTransform;
-    public float RaycastMaxDistance = 2;
+    public float RaycastMaxDistance = 5;
     public LayerMask CheckItemLayerMask;
 
     private Firearms carriedWeapon;
