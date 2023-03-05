@@ -106,6 +106,7 @@ namespace Scripts.Weapon
             var bulletScript = tmpBullet.AddComponent<Bullet>();
             bulletScript.ImpactPrefab = BulletImpactPrefab;
             bulletScript.ImpactAudioData = ImpactAudioData;
+            bulletScript.BleedingEffectPrefab = BleedingEffectPrefab;
             bulletScript.BulletSpeed = 100;
         }
 

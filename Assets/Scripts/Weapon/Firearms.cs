@@ -29,7 +29,8 @@ namespace Scripts.Weapon
         public int MaxAmmoCarried = 120; // 最大子弹携带数量
         public GameObject BulletPrefab; // 子弹预制体
         public GameObject BulletImpactPrefab; // 子弹撞击效果预制体
-
+        public GameObject BleedingEffectPrefab; // 出血效果预制体
+        
         public float SpreadAngle; // 散射角度
 
         public List<ScopeInfo> ScopeInfos; // 可用瞄具列表

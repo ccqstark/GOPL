@@ -8619,6 +8619,10 @@ PrefabInstance:
       propertyPath: CrosshairUI
       value: 
       objectReference: {fileID: 1979633209}
+    - target: {fileID: 1166364976585563907, guid: 49be6fbda10d7b4408a79af568d1341a, type: 3}
+      propertyPath: BleedingEffectPrefab
+      value: 
+      objectReference: {fileID: 1000013169864706, guid: e5a3d6da48298a0458c1990f58c27069, type: 3}
     - target: {fileID: 1225847064935578736, guid: 49be6fbda10d7b4408a79af568d1341a, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -46238,7 +46242,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 1767653080378331}
   m_Enabled: 0
   m_AgentTypeID: 0
-  m_Radius: 0.3
+  m_Radius: 0.2
   m_Speed: 0.08
   m_Acceleration: 8
   avoidancePriority: 50
@@ -46264,7 +46268,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   EnemyParameter:
-    HP: 300
+    HP: 1000
     MoveSpeed: 0.5
     ChaseSpeed: 3
     IdleTime: 6
@@ -46287,10 +46291,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.2809367
+  m_Radius: 0.18020014
   m_Height: 1.8159536
   m_Direction: 1
-  m_Center: {x: -0.007902086, y: 0.906632, z: 1.343842e-10}
+  m_Center: {x: 0.0038096604, y: 0.90661913, z: -0.004666209}
 --- !u!114 &95855963394072137
 MonoBehaviour:
   m_ObjectHideFlags: 0
