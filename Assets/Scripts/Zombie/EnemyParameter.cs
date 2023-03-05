@@ -9,6 +9,8 @@ public class EnemyParameter
 {
     public int HP; // 血量
 
+    public float Height; // 高度
+    
     public float MoveSpeed; // 行走速度
 
     public float ChaseSpeed; // 追击速度

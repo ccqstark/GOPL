@@ -46269,13 +46269,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EnemyParameter:
     HP: 1000
+    Height: 1.8
     MoveSpeed: 0.5
     ChaseSpeed: 3
     IdleTime: 6
     PatrolDistance: 5
     PatrolMaxTime: 3
     HatredAreaRadius: 8
-    AttackDistance: 2.3
+    AttackDistance: 2.5
     InitialPoint: {fileID: 0}
     Animator: {fileID: 0}
     DistanceFromPlayer: 0
