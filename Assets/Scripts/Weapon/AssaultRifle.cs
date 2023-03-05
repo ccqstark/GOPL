@@ -99,6 +99,8 @@ namespace Scripts.Weapon
         {
             // Instantiate方法用于创建一个新的游戏对象，并将它添加到场景中
             GameObject tmpBullet = Instantiate(BulletPrefab, MuzzlePoint.position, transform.rotation);
+            // 添加tag
+            tmpBullet.tag = "Bullet";
             // 子弹散射（改变子弹射出的角度）
             tmpBullet.transform.eulerAngles += CalculateSpreadOffset();
             var bulletScript = tmpBullet.AddComponent<Bullet>();

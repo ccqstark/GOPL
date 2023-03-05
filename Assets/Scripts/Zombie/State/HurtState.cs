@@ -8,6 +8,8 @@ public class HurtState : IState
     
     private EnemyParameter enemyParameter;
     
+    private AnimatorStateInfo animatorInfo;
+
     public HurtState(FSM manager)
     {
         this.stateManager = manager;
@@ -16,16 +18,22 @@ public class HurtState : IState
     
     public void OnEnter()
     {
-        throw new System.NotImplementedException();
+        enemyParameter.Animator.SetBool("Hurt", true);
     }
 
     public void OnUpdate()
     {
-        throw new System.NotImplementedException();
+        stateManager.TurnToPlayer();
+        animatorInfo = enemyParameter.Animator.GetCurrentAnimatorStateInfo(0);
+        // 受伤或击退动画即将播放完成后回到空闲状态
+        if (animatorInfo.IsName("Base.Hurt") &&
+            animatorInfo.normalizedTime >= 0.8f) {
+            stateManager.TransitionState(StateType.Idle);
+        }
     }
 
     public void OnExit()
     {
-        throw new System.NotImplementedException();
+        enemyParameter.Animator.SetBool("Hurt", false);
     }
 }

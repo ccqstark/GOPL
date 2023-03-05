@@ -30,5 +30,6 @@ public class EnemyParameter
     public float DistanceFromPlayer; // 与玩家的距离
 
     public float TurnToSmoothTime; // 转向平滑参数
-    
+
+    public float InjuryProbability; // 受伤概率
 }

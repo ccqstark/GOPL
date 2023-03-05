@@ -21,7 +21,7 @@ public class DeathState : IState
 
     public void OnUpdate()
     {
-        throw new System.NotImplementedException();
+        // todo: 一定时间后销毁尸体（不一定做）
     }
 
     public void OnExit()

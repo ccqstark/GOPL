@@ -18,6 +18,8 @@ TagManager:
   - Snow
   - Water
   - Wood
+  - Bullet
+  - Enemy
   layers:
   - Default
   - TransparentFX

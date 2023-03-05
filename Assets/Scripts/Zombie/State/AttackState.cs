@@ -17,13 +17,13 @@ public class AttackState : IState
     public void OnEnter()
     {
         enemyParameter.Animator.SetBool("Attack", true);
+        // 面朝玩家攻击
+        stateManager.TurnToPlayer();
     }
 
     public void OnUpdate()
     {
-        // 面朝玩家攻击
-        stateManager.TurnToPlayer();
-        // 超出攻击范围
+        // 超出攻击范围则继续追击
         if (enemyParameter.DistanceFromPlayer > enemyParameter.AttackDistance)
         {
             stateManager.TransitionState(StateType.Chase);
