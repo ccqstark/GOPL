@@ -42,7 +42,7 @@ public class ChaseState : IState
             stateManager.TransitionState(StateType.Idle);
         }
         // 血量小于等于0时死亡
-        if (enemyParameter.HP <= 0)
+        if (enemyParameter.Health <= 0)
         {
             stateManager.TransitionState(StateType.Death);
         }

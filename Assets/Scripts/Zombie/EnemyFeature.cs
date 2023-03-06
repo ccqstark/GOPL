@@ -24,9 +24,9 @@ public class EnemyFeature : MonoBehaviour
 
     public void TakeDamage(int damageValue)
     {
-        stateManager.EnemyParameter.HP -= damageValue;
+        stateManager.EnemyParameter.Health -= damageValue;
         // 触发死亡
-        if (stateManager.EnemyParameter.HP <= 0)
+        if (stateManager.EnemyParameter.Health <= 0)
         {
             stateManager.TransitionState(StateType.Death);
         }

@@ -61,7 +61,7 @@ public class AttackState : IState
             if (animatorInfo.IsName("Base.Attack") && decimalPart >= 0.4  &&
                 attackTimes < integerPart + 1) {
                 // 扣除玩家的血量
-                //hit.collider.GetComponent<PlayerHealth>().TakeDamage(10);
+                hit.collider.GetComponent<PlayerHealthController>().TakeDamage(20);
                 attackTimes++;
                 Debug.Log("攻击了玩家" + attackTimes + "次");
             }
