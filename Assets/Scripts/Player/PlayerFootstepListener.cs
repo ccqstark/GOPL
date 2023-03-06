@@ -36,7 +36,7 @@ public class PlayerFootstepListener : MonoBehaviour
                 // 是否碰到地面
                 bool isHit = Physics.Linecast(footstepTransform.position, detectEnd, out RaycastHit hitInfo, LayerMask);
 
-                // 用红线debug，只在unity编辑界面中有效
+                // debug: 用红线标识落脚处，只在unity编辑界面中有效
 #if UNITY_EDITOR
                 Debug.DrawLine(footstepTransform.position, detectEnd, Color.red, 0.25f);
 #endif

@@ -11,9 +11,7 @@ public class EnemyParameter
 
     public float Height; // 高度
     
-    public float MoveSpeed; // 行走速度
-
-    public float ChaseSpeed; // 追击速度
+    public float MoveSpeed; // 移动速度
 
     public float IdleTime; // 每次原地空闲事件
 

@@ -46379,7 +46379,7 @@ NavMeshAgent:
   m_Enabled: 0
   m_AgentTypeID: 0
   m_Radius: 0.2
-  m_Speed: 0.08
+  m_Speed: 0
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 200
@@ -46406,13 +46406,12 @@ MonoBehaviour:
   EnemyParameter:
     Health: 300
     Height: 1.8
-    MoveSpeed: 0.5
-    ChaseSpeed: 3
+    MoveSpeed: 0.07
     IdleTime: 6
     PatrolDistance: 5
     PatrolMaxTime: 3
     HatredAreaRadius: 8
-    AttackDistance: 2.5
+    AttackDistance: 2
     InitialPoint: {fileID: 0}
     Animator: {fileID: 0}
     DistanceFromPlayer: 0

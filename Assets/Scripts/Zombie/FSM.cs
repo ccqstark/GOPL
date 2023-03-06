@@ -27,6 +27,7 @@ public class FSM : MonoBehaviour
         EnemyParameter.Animator = GetComponent<Animator>();
         // 获取导航组件
         navAgent = GetComponent<NavMeshAgent>();
+        navAgent.speed = EnemyParameter.MoveSpeed;
         // 获取玩家的变换组件
         playerTransform = GameObject.FindWithTag("Player").transform;
         
