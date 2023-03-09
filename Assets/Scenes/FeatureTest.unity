@@ -24305,6 +24305,27 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4374095332162218, guid: 7969742ac77044a4dbc77a64adb9dd45, type: 3}
   m_PrefabInstance: {fileID: 1637432197}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1261590033 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1227318104971404144, guid: 49be6fbda10d7b4408a79af568d1341a, type: 3}
+  m_PrefabInstance: {fileID: 453550721}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1261590039
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1261590033}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1ad31d01728f634cbff814deb521756, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponSway: 1
+  swayAmount: 0.02
+  maxSwayAmount: 0.06
+  swaySmoothValue: 4
 --- !u!1 &1266732358 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1038711107932704, guid: 2294fbbe174a95e4d81f59db8d809b5f, type: 3}

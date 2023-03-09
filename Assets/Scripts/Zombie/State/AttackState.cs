@@ -45,11 +45,10 @@ public class AttackState : IState
         double playingIntegerPart = Math.Truncate(playingProgressNumber); // 播放进度整数部分
         double playingDecimalPart = playingProgressNumber - playingIntegerPart; // 播放进度小数部分
 
+        // 每次攻击前都调整下攻击方向
         if (playingDecimalPart <= 0.1f)
         {
-            // 面朝玩家攻击
             stateManager.TurnToPlayer();
-            // 更新攻击检测方向
             attackDetectDirection = enemyTransform.forward;
         }
 
