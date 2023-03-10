@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4824831992194852856aa0ae87ce0918, type: 3}
-  m_Name: Ak47 Audio Data
+  m_Name: AK47_Audio_Data
   m_EditorClassIdentifier: 
   ShootingAudio: {fileID: 8300000, guid: 38b450e2adcb6f542acc8c1d423bd8dc, type: 3}
   ReloadLeft: {fileID: 8300000, guid: f7ce534a0633b9847910ba117e2245d1, type: 3}

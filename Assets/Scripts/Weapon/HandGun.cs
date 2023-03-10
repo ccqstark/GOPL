@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Scripts.Weapon
 {
-    public class AssaultRifle : Firearms
+    public class HandGun : Firearms
     {
         private FPMouseLook mouseLook;
 
@@ -56,41 +56,7 @@ namespace Scripts.Weapon
             // 播放换弹声音
             FirearmsReloadAudioSource.Play();
         }
-
-        /*protected override void Aim()
-        {
-            GunAnimator.SetBool("Aim", IsAiming);
-        }*/
-
-        /*private void Update()
-        {
-            // 按下鼠标左键开火
-            if (Input.GetMouseButton(0))
-            {
-                DoAttack();
-            }
-
-            // 按下 R 换弹药
-            if (Input.GetKeyDown(KeyCode.R))
-            {
-                Reload();
-            }
-
-            // 按下鼠标右键进入机瞄状态
-            if (Input.GetMouseButtonDown(1))
-            {
-                IsAiming = true;
-                Aim();
-            }
-
-            // 松开鼠标右键退出机瞄状态
-            if (Input.GetMouseButtonUp(1))
-            {
-                IsAiming = false;
-                Aim();
-            }
-        }*/
-
+        
         protected void CreateBullet()
         {
             // Instantiate方法用于创建一个新的游戏对象，并将它添加到场景中

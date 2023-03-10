@@ -19,6 +19,11 @@ public class FSM : MonoBehaviour
 
     private Transform playerTransform; // 玩家变换组件
 
+    // Get方法
+    public NavMeshAgent GetNavAgent() => navAgent;
+    public Transform GetPlayerTransform() => playerTransform;
+    public Transform GetEnemyTransform() => enemyTransform;
+    
     void Start()
     {
         // 获取当前敌人的变换组件
@@ -87,24 +92,6 @@ public class FSM : MonoBehaviour
     public void EnableNavComponent(bool state)
     {
         navAgent.enabled = state;
-    }
-
-    // 获取Nav组件
-    public NavMeshAgent GetNavAgent()
-    {
-        return navAgent;
-    }
-
-    // 获取玩家的变换组件
-    public Transform GetPlayerTransform()
-    {
-        return playerTransform;
-    }
-    
-    // 获取当前敌人的变换组件
-    public Transform GetEnemyTransform()
-    {
-        return enemyTransform;
     }
 
 }

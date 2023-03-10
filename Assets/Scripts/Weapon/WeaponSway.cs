@@ -7,7 +7,7 @@ using UnityEngine;
  */
 public class WeaponSway : MonoBehaviour
 {
-    public bool weaponSway; // 武器摆动开关
+    public bool weaponSway = true; // 武器摆动开关
 
     public float swayAmount = 0.02f; // 摆动系数
     public float maxSwayAmount = 0.06f; // 摆动幅度上限
@@ -32,7 +32,7 @@ public class WeaponSway : MonoBehaviour
                 (movementX, -maxSwayAmount, maxSwayAmount);
             movementY = Mathf.Clamp
                 (movementY, -maxSwayAmount, maxSwayAmount);
-            // 线性差值来平滑过渡
+            // 线性插值来平滑过渡
             Vector3 finalSwayPosition = new Vector3
                 (movementX, movementY, 0);
             transform.localPosition = Vector3.Lerp

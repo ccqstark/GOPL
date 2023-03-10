@@ -78,8 +78,8 @@ public class WeaponManager : MonoBehaviour
         }
         
         // 更新子弹数
-        UpdateAmmoInfo(carriedWeapon.GetCurrentAmmo, 
-            carriedWeapon.GetCurrentMaxAmmoCarried);
+        UpdateAmmoInfo(carriedWeapon.GetCurrentAmmo(), 
+            carriedWeapon.GetCurrentMaxAmmoCarried());
     }
 
     private void CheckItem()

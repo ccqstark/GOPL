@@ -12,9 +12,10 @@ namespace Scripts.Weapon
         public GameObject Crosshair; // 准心UI
         private CrosshairUI crosshairUI; // 准心UI的脚本控制对象
         
-        public Transform MuzzlePoint; // 枪口位置
+        public Transform MuzzlePoint; // 枪焰位置
         public Transform CasingPoint; // 抛壳位置
-
+        public Transform BulletSpawnPoint; // 子弹出射口
+        
         public ParticleSystem MuzzleParticle; // 枪口粒子特效
         public ParticleSystem CasingParticle; // 抛壳粒子特效
 
@@ -37,8 +38,8 @@ namespace Scripts.Weapon
         public ScopeInfo BaseIronSight; // 基础瞄具
         protected ScopeInfo rigoutScopeInfo; // 当前装备的瞄具
 
-        public int GetCurrentAmmo => CurrentAmmo;
-        public int GetCurrentMaxAmmoCarried => CurrentMaxAmmoCarried;
+        public int GetCurrentAmmo() => CurrentAmmo;
+        public int GetCurrentMaxAmmoCarried() => CurrentMaxAmmoCarried;
             
         protected int CurrentAmmo; // 当前弹匣里的子弹数量
         protected int CurrentMaxAmmoCarried; // 当前携带最大子弹数
@@ -55,6 +56,9 @@ namespace Scripts.Weapon
 
         private Vector3 originalEyePosition;
         protected Transform gunCameraTransform;
+
+        private static IEnumerator reloadAmmoCheckerCoroutine;
+        private static IEnumerator doAimCoroutine;
         
         protected virtual void Awake()
         {
@@ -68,10 +72,7 @@ namespace Scripts.Weapon
             // FOV
             EyeOriginFOV = EyeCamera.fieldOfView;
             GunOriginFov = GunCamera.fieldOfView;
-            // 启动一个协程检查换弹动画是否完成
-            StartCoroutine(CheckReloadAmmoAnimationEnd());
-            // 启动一个协程检测到进入机瞄状态就放大视角
-            StartCoroutine(DoAim());
+            // 初始化GunCamera
             gunCameraTransform = GunCamera.transform;
             originalEyePosition = gunCameraTransform.localPosition;
             // 默认瞄具赋值
@@ -174,6 +175,19 @@ namespace Scripts.Weapon
 
         internal void Aiming(bool _isAiming)
         {
+            // 保证协程运行
+            if (doAimCoroutine == null)
+            {
+                doAimCoroutine = DoAim();
+                StartCoroutine(doAimCoroutine);
+            }
+            else
+            {
+                StopCoroutine(doAimCoroutine);
+                doAimCoroutine = null;
+                doAimCoroutine = DoAim();
+                StartCoroutine(doAimCoroutine);
+            }
             IsAiming = _isAiming;
             GunAnimator.SetBool("Aim", IsAiming);
         }
@@ -196,6 +210,19 @@ namespace Scripts.Weapon
 
         internal void ReloadAmmo()
         {
+            // 保证协程运行
+            if (reloadAmmoCheckerCoroutine == null)
+            {
+                reloadAmmoCheckerCoroutine = CheckReloadAmmoAnimationEnd();
+                StartCoroutine(reloadAmmoCheckerCoroutine);
+            }
+            else
+            {
+                StopCoroutine(reloadAmmoCheckerCoroutine);
+                reloadAmmoCheckerCoroutine = null;
+                reloadAmmoCheckerCoroutine = CheckReloadAmmoAnimationEnd();
+                StartCoroutine(reloadAmmoCheckerCoroutine);
+            }
             Reload();
         }
         

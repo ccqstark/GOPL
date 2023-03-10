@@ -7,7 +7,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: idle@assault_rifle_01
+  m_Name: Idle
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -159,7 +159,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Reload_OutOf
+  m_Name: Reload_Out_Of
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -211,7 +211,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: aim_in@assault_rifle_01
+  m_Name: Aim_In
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -238,7 +238,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Blend Tree
+  m_Name: Move
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -392,7 +392,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: aim_out@assault_rifle_01
+  m_Name: Aim_Out
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -446,7 +446,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: aim_fire_pose@assault_rifle_01
+  m_Name: Aim_Fire_Pose
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -495,7 +495,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: take_out_weapon@assault_rifle_01
+  m_Name: Take_Out
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -784,7 +784,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: holster_weapon@assault_rifle_01
+  m_Name: Holster
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
