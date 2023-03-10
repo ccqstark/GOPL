@@ -92864,7 +92864,7 @@ MonoBehaviour:
   BulletPrefab: {fileID: 4792577774353629631, guid: 17fdda320ea4e064b8b3738f0ff479d0, type: 3}
   BulletImpactPrefab: {fileID: 1879272669879180, guid: 75b24d93631c6b949bca94153bdb3f89, type: 3}
   BleedingEffectPrefab: {fileID: 1000013169864706, guid: e5a3d6da48298a0458c1990f58c27069, type: 3}
-  SpreadAngle: 60
+  SpreadAngle: 0.05
   ScopeInfos: []
   BaseIronSight:
     ScopeName: IronSights
@@ -93093,7 +93093,7 @@ MonoBehaviour:
   BulletPrefab: {fileID: 4792577774353629631, guid: 17fdda320ea4e064b8b3738f0ff479d0, type: 3}
   BulletImpactPrefab: {fileID: 1879272669879180, guid: 75b24d93631c6b949bca94153bdb3f89, type: 3}
   BleedingEffectPrefab: {fileID: 1000013169864706, guid: e5a3d6da48298a0458c1990f58c27069, type: 3}
-  SpreadAngle: 60
+  SpreadAngle: 0.05
   ScopeInfos:
   - ScopeName: 2X
     ScopeGameObject: {fileID: 2149981973734435944}

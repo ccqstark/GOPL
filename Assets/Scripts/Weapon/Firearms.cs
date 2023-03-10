@@ -32,7 +32,7 @@ namespace Scripts.Weapon
         public GameObject BulletImpactPrefab; // 子弹撞击效果预制体
         public GameObject BleedingEffectPrefab; // 出血效果预制体
         
-        public float SpreadAngle; // 散射角度
+        public float SpreadAngle = 0.05f; // 散射角度
 
         public List<ScopeInfo> ScopeInfos; // 可用瞄具列表
         public ScopeInfo BaseIronSight; // 基础瞄具
@@ -105,9 +105,8 @@ namespace Scripts.Weapon
         // 计算散射偏移
         protected Vector3 CalculateSpreadOffset()
         {
-            // todo: 有点bug，这样的效果应该是相反的
             // 瞄准时，FOV变小，子弹散射程度变小
-            float tmp_SpreadPercent = SpreadAngle / EyeCamera.fieldOfView;
+            float tmp_SpreadPercent = SpreadAngle * EyeCamera.fieldOfView;
             // insideUnitCircle 返回一个单位圆范围内的随机点
             return tmp_SpreadPercent * UnityEngine.Random.insideUnitCircle;
         }
