@@ -190,6 +190,13 @@ public class WeaponManager : MonoBehaviour
                 SetCarriedWeapon(SecondaryWeapon);
             }
         }
+        // 鼠标滚轮
+        else if (Input.GetAxis("Mouse ScrollWheel") != 0)
+        {
+            if (carriedWeapon == null || MainWeapon == null || SecondaryWeapon == null) return;
+            StartWaitingForHolsterEndCoroutine();
+            carriedWeapon.GunAnimator.SetTrigger("Holster");
+        }
     }
 
     // 启动协程来判断收枪动画是否播放完成，然后进行枪支的切换
