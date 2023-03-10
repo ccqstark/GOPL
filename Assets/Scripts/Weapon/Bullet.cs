@@ -33,11 +33,13 @@ namespace Scripts.Weapon
             // 击中敌人造成伤害
             if (hitInfo.collider.tag.Equals("Enemy"))
             {
-                Debug.Log("击中敌人");
                 var enemy = hitInfo.collider.gameObject.GetComponent<EnemyFeature>();
-                enemy.TakeDamage(20);
+                var player = GameObject.FindWithTag("Player");
+                var bulletDamage = player.GetComponent<WeaponManager>().GetCarriedWeapon().Damage;
+                // 不同的武器造成不同的伤害
+                enemy.TakeDamage(bulletDamage);
                 
-                // 出血特效
+                // 溅血特效
                 var bleedingEffect = 
                     Instantiate(BleedingEffectPrefab,
                         hitInfo.point,
@@ -55,7 +57,6 @@ namespace Scripts.Weapon
                 // 3s后特效自动消失
                 Destroy(bulletEffect, 3);
             }
-            
             
             // 播放子弹撞击物体声音
             var audioWithTags =

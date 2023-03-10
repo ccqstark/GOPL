@@ -8,19 +8,21 @@ using UnityEngine.UI;
 
 public class WeaponManager : MonoBehaviour
 {
-    public Firearms MainWeapon;
-    public Firearms SecondaryWeapon;
-    public Text AmmoCountTextLabel;
+    public Firearms MainWeapon; // 主武器
+    public Firearms SecondaryWeapon; // 副武器
+    public Text AmmoCountTextLabel; // 子弹数显示UI
     
-    public List<Firearms> Arms = new List<Firearms>();
-    public Transform WorldCameraTransform;
-    public float RaycastMaxDistance = 5;
-    public LayerMask CheckItemLayerMask;
+    public List<Firearms> Arms = new List<Firearms>(); // 用于存储不同武器模型(带手)
+    public Transform WorldCameraTransform; // 枪械的Camera
+    public float RaycastMaxDistance = 5; // 捡东西的最大检测距离
+    public LayerMask CheckItemLayerMask; // 检查物品过滤用的层
 
-    private Firearms carriedWeapon;
+    private Firearms carriedWeapon; // 当前手持的武器
 
     [SerializeField] private FPCharacterControllerMovement fpCharacterControllerMovement;
     private IEnumerator waitingForHolsterEndCoroutine;
+
+    public Firearms GetCarriedWeapon() => carriedWeapon;
 
     // 更新武器信息 UI 的子弹数量
     private void UpdateAmmoInfo(int _ammo, int _remainingAmmo)

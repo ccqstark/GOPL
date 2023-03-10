@@ -26,6 +26,8 @@ namespace Scripts.Weapon
 
         public float FireRate; // 射速 (1s发射的子弹数)
 
+        public int Damage; // 子弹的伤害
+        
         public int AmmoInMag = 30; // 一个弹匣子弹数量
         public int MaxAmmoCarried = 120; // 最大子弹携带数量
         public GameObject BulletPrefab; // 子弹预制体
@@ -57,9 +59,9 @@ namespace Scripts.Weapon
         private Vector3 originalEyePosition;
         protected Transform gunCameraTransform;
 
-        private static IEnumerator reloadAmmoCheckerCoroutine;
-        private static IEnumerator doAimCoroutine;
-        
+        private static IEnumerator reloadAmmoCheckerCoroutine; // 处理子弹数量的协程
+        private static IEnumerator doAimCoroutine; // 处理瞄准动作的协程
+
         protected virtual void Awake()
         {
             // 初始化子弹数量

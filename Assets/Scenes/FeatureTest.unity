@@ -92859,12 +92859,13 @@ MonoBehaviour:
   FirearmsAudioData: {fileID: 11400000, guid: ddb79ca4f41df94479c87fe10ec574e6, type: 2}
   ImpactAudioData: {fileID: 11400000, guid: 9d3cf0d2c1cfe114c99d45f21e7aa9b4, type: 2}
   FireRate: 2
+  Damage: 40
   AmmoInMag: 30
   MaxAmmoCarried: 120
   BulletPrefab: {fileID: 4792577774353629631, guid: 17fdda320ea4e064b8b3738f0ff479d0, type: 3}
   BulletImpactPrefab: {fileID: 1879272669879180, guid: 75b24d93631c6b949bca94153bdb3f89, type: 3}
   BleedingEffectPrefab: {fileID: 1000013169864706, guid: e5a3d6da48298a0458c1990f58c27069, type: 3}
-  SpreadAngle: 0.05
+  SpreadAngle: 0.01
   ScopeInfos: []
   BaseIronSight:
     ScopeName: IronSights
@@ -93088,6 +93089,7 @@ MonoBehaviour:
   FirearmsAudioData: {fileID: 11400000, guid: 33ae40cf7fe6cd44ca840afed5e01ca9, type: 2}
   ImpactAudioData: {fileID: 11400000, guid: 9d3cf0d2c1cfe114c99d45f21e7aa9b4, type: 2}
   FireRate: 11.7
+  Damage: 25
   AmmoInMag: 30
   MaxAmmoCarried: 120
   BulletPrefab: {fileID: 4792577774353629631, guid: 17fdda320ea4e064b8b3738f0ff479d0, type: 3}
