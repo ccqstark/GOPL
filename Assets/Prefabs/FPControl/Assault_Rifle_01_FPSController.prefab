@@ -29947,7 +29947,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 5eea69f57b7ce654a8a7a2d6d64ecd82, type: 2}
+  - {fileID: 2100000, guid: 03ecf8889a246e743b8b08837229b299, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -36273,8 +36273,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   EyeCamera: {fileID: 7164477631747202360}
+  GunCamera: {fileID: 0}
+  Crosshair: {fileID: 0}
   MuzzlePoint: {fileID: 812505564261597901}
   CasingPoint: {fileID: 7145158859278091124}
+  BulletSpawnPoint: {fileID: 0}
   MuzzleParticle: {fileID: 687401200465199745}
   CasingParticle: {fileID: 197608536569977894}
   FirearmsShootingAudioSource: {fileID: 7062883410670281884}
@@ -36282,10 +36285,20 @@ MonoBehaviour:
   FirearmsAudioData: {fileID: 11400000, guid: 33ae40cf7fe6cd44ca840afed5e01ca9, type: 2}
   ImpactAudioData: {fileID: 11400000, guid: 9d3cf0d2c1cfe114c99d45f21e7aa9b4, type: 2}
   FireRate: 11.7
+  Damage: 0
   AmmoInMag: 30
   MaxAmmoCarried: 120
   BulletPrefab: {fileID: 4792577774353629631, guid: 17fdda320ea4e064b8b3738f0ff479d0, type: 3}
   BulletImpactPrefab: {fileID: 1879272669879180, guid: 75b24d93631c6b949bca94153bdb3f89, type: 3}
+  BleedingEffectPrefab: {fileID: 0}
+  SpreadAngle: 0.05
+  ScopeInfos: []
+  BaseIronSight:
+    ScopeName: 
+    ScopeGameObject: {fileID: 0}
+    EyeFov: 0
+    GunFov: 0
+    GunCameraPosition: {x: 0, y: 0, z: 0}
 --- !u!1 &7143976291569879696
 GameObject:
   m_ObjectHideFlags: 0
@@ -36335,6 +36348,7 @@ MonoBehaviour:
   CharacterTransform: {fileID: 7145155042589673454}
   MouseSensitivity: 5
   MaximumAngle: {x: -65, y: 65}
+  SmoothTime: 0
   RecoilCurve:
     serializedVersion: 2
     m_Curve:
@@ -36360,6 +36374,7 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   RecoilRange: {x: 0.1, y: 0.1}
+  RecoilFadeOutTime: 0.3
 --- !u!1 &7143990584200604558
 GameObject:
   m_ObjectHideFlags: 0
