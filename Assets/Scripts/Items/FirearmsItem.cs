@@ -6,6 +6,7 @@
         {
             AssaultRifle,
             HandGun,
+            SMG,
         }
 
         public FirearmsType CurrentFirearmsType;

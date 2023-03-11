@@ -123,6 +123,9 @@ public class WeaponManager : MonoBehaviour
                     case FirearmsItem.FirearmsType.HandGun:
                         SecondaryWeapon = tmpArm;
                         break;
+                    case FirearmsItem.FirearmsType.SMG:
+                        MainWeapon = tmpArm;
+                        break;
                     default:
                         throw new ArgumentOutOfRangeException();
                 }
