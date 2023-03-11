@@ -115,20 +115,16 @@ public class WeaponManager : MonoBehaviour
             foreach (Firearms tmpArm in Arms)
             {
                 if (tmpFirearmsItem.ArmsName.CompareTo(tmpArm.name) != 0) continue;
-                switch (tmpFirearmsItem.CurrentFirearmsType)
+                // 替换主武器
+                if (MainWeapon == null || (carriedWeapon == MainWeapon && SecondaryWeapon != null))
                 {
-                    case FirearmsItem.FirearmsType.AssaultRifle:
-                        MainWeapon = tmpArm;
-                        break;
-                    case FirearmsItem.FirearmsType.HandGun:
-                        SecondaryWeapon = tmpArm;
-                        break;
-                    case FirearmsItem.FirearmsType.SMG:
-                        MainWeapon = tmpArm;
-                        break;
-                    default:
-                        throw new ArgumentOutOfRangeException();
+                    MainWeapon = tmpArm;
                 }
+                else
+                {
+                    SecondaryWeapon = tmpArm;
+                }
+                // 捡起武器后设置为当前手持武器
                 SetCarriedWeapon(tmpArm);
             }
         }
