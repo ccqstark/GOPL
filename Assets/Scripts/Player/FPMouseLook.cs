@@ -9,7 +9,8 @@ public class FPMouseLook : MonoBehaviour
     [SerializeField] private Transform CharacterTransform; // 传入角色整体组件对象
     private Vector3 cameraRotation; // 缓存上一帧的值
 
-    public float MouseSensitivity; // 鼠标灵敏度
+    public float DefaultMouseSensitivity = 3.9f; // 默认鼠标灵敏度
+    public float CurrentMouseSensitivity; // 当前鼠标灵敏度
     public Vector2 MaximumAngle; // 最大角度限制
     public float SmoothTime; // 平滑参数
 
@@ -27,6 +28,7 @@ public class FPMouseLook : MonoBehaviour
         Cursor.visible = false;
         cameraTransform = transform;
         cameraSpring = GetComponentInChildren<CameraSpring>();
+        CurrentMouseSensitivity = DefaultMouseSensitivity;
     }
 
     private void Update()
@@ -36,8 +38,8 @@ public class FPMouseLook : MonoBehaviour
         var tmpMouseY = Input.GetAxis("Mouse Y");
 
         // 修改转动角度（乘以鼠标灵敏度）
-        cameraRotation.y += tmpMouseX * MouseSensitivity;
-        cameraRotation.x -= tmpMouseY * MouseSensitivity;
+        cameraRotation.y += tmpMouseX * CurrentMouseSensitivity;
+        cameraRotation.x -= tmpMouseY * CurrentMouseSensitivity;
 
         // 枪的后坐力
         CalculateRecoilOffset();
@@ -68,10 +70,21 @@ public class FPMouseLook : MonoBehaviour
         currentRecoil = Vector2.Lerp(Vector2.zero, currentRecoil, tmp_RecoilValue);
     }
 
-    public void FiringForTest()
+    // 震动视角
+    public void VibratingPerspective()
     {
         currentRecoil += RecoilRange;
         cameraSpring.StartCameraSpring();
         currentRecoilTime = 0;
+    }
+
+    public void ChangeMouseMouseSensitivity(float sensitivityValue)
+    {
+        CurrentMouseSensitivity = sensitivityValue;
+    }
+
+    public void RestoreMouseMouseSensitivity()
+    {
+        CurrentMouseSensitivity = DefaultMouseSensitivity;
     }
 }

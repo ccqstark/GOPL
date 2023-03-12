@@ -6,11 +6,13 @@ namespace Scripts.Weapon
     public class HandGun : Firearms
     {
         private FPMouseLook mouseLook;
+        private FirearmsMagReloadAudioData firearmsMagReloadAudioData;
 
         protected override void Awake()
         {
             base.Awake();
             mouseLook = FindObjectOfType<FPMouseLook>();
+            firearmsMagReloadAudioData = (FirearmsMagReloadAudioData)FirearmsAudioData;
         }
 
         protected override void Shooting()
@@ -25,7 +27,7 @@ namespace Scripts.Weapon
             CreateBullet(); // 发射子弹
             FirearmsShootingAudioSource.Play();
 
-            mouseLook.FiringForTest();
+            mouseLook.VibratingPerspective();
 
             CasingParticle.Play(); // 抛壳动画
             LastFireTime = Time.time;
@@ -39,18 +41,16 @@ namespace Scripts.Weapon
             var tmpCurrentAmmo = CurrentAmmo;
             CurrentAmmo = 0;
             CurrentMaxAmmoCarried += tmpCurrentAmmo;
-            // 设置换弹动画权重（半换弹、全换弹）
-            GunAnimator.SetLayerWeight(2, 1);
             // 设置换弹动画触发器和声音
             if (tmpCurrentAmmo > 0)
             {
                 GunAnimator.SetTrigger("ReloadLeft");
-                FirearmsReloadAudioSource.clip = FirearmsAudioData.ReloadLeft;
+                FirearmsReloadAudioSource.clip = firearmsMagReloadAudioData.ReloadLeft;
             }
             else
             {
                 GunAnimator.SetTrigger("ReloadOutOf");
-                FirearmsReloadAudioSource.clip = FirearmsAudioData.ReloadOutOf;
+                FirearmsReloadAudioSource.clip = firearmsMagReloadAudioData.ReloadOutOf;
             }
 
             // 播放换弹声音

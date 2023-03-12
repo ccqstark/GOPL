@@ -6,36 +6,38 @@ namespace Scripts.Weapon
 {
     public abstract class Firearms : MonoBehaviour, IWeapon
     {
-        public Camera EyeCamera; // 相机
+        [Header("相机")]
+        public Camera EyeCamera;
         public Camera GunCamera;
-
+    
+        [Header("准心")]
         public GameObject Crosshair; // 准心UI
         private CrosshairUI crosshairUI; // 准心UI的脚本控制对象
         
+        [Header("枪焰与抛壳特效")]
         public Transform MuzzlePoint; // 枪焰位置
         public Transform CasingPoint; // 抛壳位置
         public Transform BulletSpawnPoint; // 子弹出射口
-        
         public ParticleSystem MuzzleParticle; // 枪口粒子特效
         public ParticleSystem CasingParticle; // 抛壳粒子特效
 
-        public AudioSource FirearmsShootingAudioSource; // 开枪声
-        public AudioSource FirearmsReloadAudioSource; // 换弹声
+        [Header("枪械音效")]
+        public AudioSource FirearmsShootingAudioSource; // 开枪声播放源
+        public AudioSource FirearmsReloadAudioSource; // 换弹声播放源
         public FirearmsAudioData FirearmsAudioData; // 枪械声音音源
         public ImpactAudioData ImpactAudioData; // 子弹撞击物体的声音
 
+        [Header("子弹")]
         public float FireRate; // 射速 (1s发射的子弹数)
-
         public int Damage; // 子弹的伤害
-        
         public int AmmoInMag = 30; // 一个弹匣子弹数量
         public int MaxAmmoCarried = 120; // 最大子弹携带数量
         public GameObject BulletPrefab; // 子弹预制体
         public GameObject BulletImpactPrefab; // 子弹撞击效果预制体
         public GameObject BleedingEffectPrefab; // 出血效果预制体
-        
         public float SpreadAngle = 0.05f; // 散射角度
 
+        [Header("瞄具")]
         public List<ScopeInfo> ScopeInfos; // 可用瞄具列表
         public ScopeInfo BaseIronSight; // 基础瞄具
         protected ScopeInfo rigoutScopeInfo; // 当前装备的瞄具
@@ -114,7 +116,7 @@ namespace Scripts.Weapon
         }
 
         // 检查一个换弹动画是否播放完毕
-        protected IEnumerator CheckReloadAmmoAnimationEnd()
+        protected IEnumerator CheckReloadAmmoAnimationEndHandler()
         {
             while (true)
             {
@@ -144,7 +146,7 @@ namespace Scripts.Weapon
         }
 
         // 瞄准时放大视角
-        protected IEnumerator DoAim()
+        protected IEnumerator DoAimHandler()
         {
             while (true)
             {
@@ -174,19 +176,19 @@ namespace Scripts.Weapon
             }
         }
 
-        internal void Aiming(bool _isAiming)
+        public virtual void Aiming(bool _isAiming)
         {
             // 保证协程运行
             if (doAimCoroutine == null)
             {
-                doAimCoroutine = DoAim();
+                doAimCoroutine = DoAimHandler();
                 StartCoroutine(doAimCoroutine);
             }
             else
             {
                 StopCoroutine(doAimCoroutine);
                 doAimCoroutine = null;
-                doAimCoroutine = DoAim();
+                doAimCoroutine = DoAimHandler();
                 StartCoroutine(doAimCoroutine);
             }
             IsAiming = _isAiming;
@@ -214,14 +216,14 @@ namespace Scripts.Weapon
             // 保证协程运行
             if (reloadAmmoCheckerCoroutine == null)
             {
-                reloadAmmoCheckerCoroutine = CheckReloadAmmoAnimationEnd();
+                reloadAmmoCheckerCoroutine = CheckReloadAmmoAnimationEndHandler();
                 StartCoroutine(reloadAmmoCheckerCoroutine);
             }
             else
             {
                 StopCoroutine(reloadAmmoCheckerCoroutine);
                 reloadAmmoCheckerCoroutine = null;
-                reloadAmmoCheckerCoroutine = CheckReloadAmmoAnimationEnd();
+                reloadAmmoCheckerCoroutine = CheckReloadAmmoAnimationEndHandler();
                 StartCoroutine(reloadAmmoCheckerCoroutine);
             }
             Reload();

@@ -7,6 +7,7 @@
             AssaultRifle,
             HandGun,
             SMG,
+            Sniper,
         }
 
         public FirearmsType CurrentFirearmsType;
