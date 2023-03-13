@@ -11,7 +11,7 @@ namespace Scripts.Weapon
         public Camera GunCamera;
     
         [Header("准心")]
-        public GameObject Crosshair; // 准心UI
+        private GameObject crosshair; // 准心UI
         private CrosshairUI crosshairUI; // 准心UI的脚本控制对象
         
         [Header("枪焰与抛壳特效")]
@@ -82,7 +82,8 @@ namespace Scripts.Weapon
             // 默认瞄具赋值
             rigoutScopeInfo = BaseIronSight;
             // 准心控制脚本对象
-            crosshairUI = Crosshair.GetComponent<CrosshairUI>();
+            crosshair = GameObject.Find("Crosshair");
+            crosshairUI = crosshair.GetComponent<CrosshairUI>();
         }
 
         public void DoAttack()
@@ -172,7 +173,7 @@ namespace Scripts.Weapon
                     Time.deltaTime * 2);
                 
                 // 瞄准时隐藏十字准心
-                Crosshair.SetActive(!IsAiming);
+                crosshair.SetActive(!IsAiming);
             }
         }
 
