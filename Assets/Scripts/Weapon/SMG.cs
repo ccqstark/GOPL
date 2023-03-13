@@ -25,8 +25,10 @@ namespace Scripts.Weapon
             GunAnimator.Play("Fire", IsAiming ? 1 : 0, 0); // 枪械开火后坐力动画
 
             CreateBullet(); // 发射子弹
+            FirearmsShootingAudioSource.clip = firearmsMagReloadAudioData.ShootingAudio;
             FirearmsShootingAudioSource.Play();
 
+            // 震动视角
             mouseLook.VibratingPerspective();
 
             CasingParticle.Play(); // 抛壳动画
