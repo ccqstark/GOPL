@@ -94,8 +94,8 @@ public class WeaponManager : MonoBehaviour
             CheckItemLayerMask);
         if (isItem)
         {
-            // 按下 E 再拾起武器
-            if (Input.GetKeyDown(KeyCode.E))
+            // 按 F 拾取武器
+            if (Input.GetKeyDown(KeyCode.F))
             {
                 var hasItem = raycastHitInfo.collider.TryGetComponent(out BaseItem tmpBaseItem);
                 if (hasItem)
