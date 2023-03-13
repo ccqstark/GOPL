@@ -38,13 +38,13 @@ namespace Scripts.Weapon
             {
                 // 开镜并减小鼠标灵敏度
                 scopeRenderMaterial.color = defaultColor;
-                fpMouseLook.ChangeMouseMouseSensitivity(MouseSensitivityAfterOpenScope);
+                fpMouseLook.ChangeMouseSensitivity(MouseSensitivityAfterOpenScope);
             }
             else
             {
                 // 关镜并恢复鼠标灵敏度
                 scopeRenderMaterial.color = fadeColor;
-                fpMouseLook.RestoreMouseMouseSensitivity();
+                fpMouseLook.RestoreMouseSensitivity();
             }
         }
 

@@ -78,12 +78,14 @@ public class FPMouseLook : MonoBehaviour
         currentRecoilTime = 0;
     }
 
-    public void ChangeMouseMouseSensitivity(float sensitivityValue)
+    // 修改鼠标灵敏度
+    public void ChangeMouseSensitivity(float sensitivityValue)
     {
         CurrentMouseSensitivity = sensitivityValue;
     }
-
-    public void RestoreMouseMouseSensitivity()
+    
+    // 还原鼠标灵敏度
+    public void RestoreMouseSensitivity()
     {
         CurrentMouseSensitivity = DefaultMouseSensitivity;
     }

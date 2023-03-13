@@ -171,14 +171,17 @@ namespace Scripts.Weapon
                     IsAiming ? rigoutScopeInfo.GunCameraPosition : originalEyePosition,
                     ref tmpRefPosition,
                     Time.deltaTime * 2);
-                
-                // 瞄准时隐藏十字准心
-                crosshair.SetActive(!IsAiming);
             }
         }
 
         public virtual void Aiming(bool _isAiming)
         {
+            IsAiming = _isAiming;
+            GunAnimator.SetBool("Aim", IsAiming);
+            
+            // 瞄准时隐藏十字准心
+            crosshair.SetActive(!IsAiming);
+            
             // 保证协程运行
             if (doAimCoroutine == null)
             {
@@ -192,8 +195,6 @@ namespace Scripts.Weapon
                 doAimCoroutine = DoAimHandler();
                 StartCoroutine(doAimCoroutine);
             }
-            IsAiming = _isAiming;
-            GunAnimator.SetBool("Aim", IsAiming);
         }
 
         internal void SetCarriedScope(ScopeInfo _scopeInfo)
