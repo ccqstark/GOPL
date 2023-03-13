@@ -55,7 +55,7 @@ namespace Scripts.Weapon
 
         protected float EyeOriginFOV;
         protected float GunOriginFov;
-        protected bool IsAiming; // 是否处于瞄准状态
+        public bool IsAiming; // 是否处于瞄准状态
         protected bool IsHoldingTrigger; // 是否孔扣动扳机状态
 
         private Vector3 originalEyePosition;

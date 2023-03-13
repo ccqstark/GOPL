@@ -6,7 +6,8 @@ public class FPCharacterControllerMovement : MonoBehaviour
     private CharacterController characterController; // 角色控制器
     private Transform characterTransform;
     private Animator characterAnimator; // 动画控制器
-
+    private WeaponManager weaponManager;
+    
     private Vector3 movementDirection;
     private float velocity; // 角色速度
 
@@ -38,8 +39,8 @@ public class FPCharacterControllerMovement : MonoBehaviour
     {
         characterController = GetComponent<CharacterController>();
         characterTransform = GetComponent<Transform>();
-        // characterAnimator = GetComponentInChildren<Animator>();
         originHeight = characterController.height;
+        weaponManager = GetComponent<WeaponManager>();
     }
 
     private void Update()
@@ -86,8 +87,8 @@ public class FPCharacterControllerMovement : MonoBehaviour
             }
             else
             {
-                // 站立冲刺/行走
-                if (Input.GetKey(KeyCode.LeftShift))
+                // 站立冲刺/行走 (瞄准状态下不可到达冲刺速度)
+                if (Input.GetKey(KeyCode.LeftShift) && !weaponManager.GetCarriedWeapon().IsAiming)
                 {
                     tmpCurrentSpeed = SprintingSpeed;
                     CharacterState = State.Sprinting;
