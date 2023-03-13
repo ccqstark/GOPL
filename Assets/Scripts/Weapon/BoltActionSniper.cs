@@ -60,10 +60,8 @@ namespace Scripts.Weapon
             GunAnimator.Play("Fire", IsAiming ? 1 : 0, 0); // 枪械开火后坐力动画
 
             CreateBullet(); // 发射子弹
-            FirearmsShootingAudioSource.clip = firearmsMultipleReloadAudioData.ShootingAudio;
-            FirearmsShootingAudioSource.Play();
-
-            mouseLook.VibratingPerspective();
+            
+            mouseLook.VibratingPerspective(); // 震动视角
 
             CasingParticle.Play(); // 抛壳动画
             LastFireTime = Time.time;
