@@ -8,6 +8,7 @@
             HandGun,
             SMG,
             Sniper,
+            Shotgun,
         }
 
         public FirearmsType CurrentFirearmsType;

@@ -15,12 +15,10 @@ namespace Scripts.Weapon
         private CrosshairUI crosshairUI; // 准心UI的脚本控制对象
         
         [Header("枪焰与抛壳特效")]
-        public Transform MuzzlePoint; // 枪焰位置
-        public Transform CasingPoint; // 抛壳位置
-        public Transform BulletSpawnPoint; // 子弹出射口
         public ParticleSystem MuzzleParticle; // 枪口粒子特效
         public ParticleSystem CasingParticle; // 抛壳粒子特效
-
+        public Transform BulletSpawnPoint; // 子弹出射口
+        
         [Header("枪械音效")]
         public AudioSource FirearmsShootingAudioSource; // 开枪声播放源
         public AudioSource FirearmsReloadAudioSource; // 换弹声播放源

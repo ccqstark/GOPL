@@ -143,8 +143,6 @@ namespace Scripts.Weapon
                 if (NeedInsertAmmoNum == 0)
                 {
                     alreadyInsertAmmoNum = 0;
-                    //FirearmsReloadAudioSource.clip = firearmsMultipleReloadAudioData.ReloadClose;
-                    //FirearmsReloadAudioSource.Play();
                 }
             }
         }
