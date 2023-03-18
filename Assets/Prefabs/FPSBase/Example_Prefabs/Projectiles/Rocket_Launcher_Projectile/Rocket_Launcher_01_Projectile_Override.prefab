@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4428336139568596}
   - component: {fileID: 198829711441321964}
   - component: {fileID: 199837359349459086}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Smoke_Particles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4839,7 +4839,7 @@ GameObject:
   - component: {fileID: -1235076179887843934}
   - component: {fileID: 65241015956886496}
   - component: {fileID: 54237673401738520}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Rocket_Launcher_01_Projectile_Override
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4925,18 +4925,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da7a459ef9794e7bb070efa15b2377f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  useConstantForce: 1
-  constantForceSpeed: 5000
-  explodeAfter: 2.5
-  explosionPrefab: {fileID: 4811645123968692, guid: 301583a5af63a494298d60cd9f296909, type: 3}
-  force: 2500
-  despawnTime: 30
-  radius: 5
-  power: 2250
-  usesParticles: 1
-  smokeParticles: {fileID: 198829711441321964}
-  flameParticles: {fileID: 198299060017700864}
-  destroyDelay: 5
+  UseConstantForce: 1
+  ConstantForceSpeed: 5000
+  ExplodeAfter: 2.5
+  ExplosionPrefab: {fileID: 4811645123968692, guid: 301583a5af63a494298d60cd9f296909, type: 3}
+  Force: 2500
+  DespawnTime: 30
+  Radius: 5
+  Power: 2250
+  UsesParticles: 1
+  SmokeParticles: {fileID: 198829711441321964}
+  FlameParticles: {fileID: 198299060017700864}
+  DestroyDelay: 5
 --- !u!65 &65241015956886496
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4977,7 +4977,7 @@ GameObject:
   - component: {fileID: 4928305188069760}
   - component: {fileID: 198299060017700864}
   - component: {fileID: 199308310197852024}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Flame_Particles
   m_TagString: Untagged
   m_Icon: {fileID: 0}

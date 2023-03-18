@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace Scripts.Weapon
 {
@@ -10,8 +11,8 @@ namespace Scripts.Weapon
 
         [Header("炮弹")] public SkinnedMeshRenderer ProjectileRenderer;
         public Transform ProjectilePrefab;
-        public float autoReloadDelay;
-        public float showProjectileDelay;
+        public float AutoReloadDelay  = 0.5f; // 自动填充延迟时间
+        public float ShowProjectileDelayTime = 1f; // 射出后隐藏炮管上炮弹模型时间
 
         protected override void Awake()
         {
@@ -37,7 +38,7 @@ namespace Scripts.Weapon
 
             mouseLook.VibratingPerspective(); // 震动视角
             
-            StartCoroutine(ShowProjectileDelay());
+            StartCoroutine(ShowProjectileDelayHandler());
             StartCoroutine(AutoReload());
             
             LastFireTime = Time.time;
@@ -68,17 +69,17 @@ namespace Scripts.Weapon
         }
 
         // 使火箭筒上的炮弹模型消失一段时间后恢复，模拟发射后炮弹空缺
-        private IEnumerator ShowProjectileDelay()
+        private IEnumerator ShowProjectileDelayHandler()
         {
             ProjectileRenderer.GetComponent<SkinnedMeshRenderer>().enabled = false;
             if (CurrentMaxAmmoCarried <= 0) yield break;
-            yield return new WaitForSeconds(showProjectileDelay);
+            yield return new WaitForSeconds(ShowProjectileDelayTime);
             ProjectileRenderer.GetComponent<SkinnedMeshRenderer>().enabled = true;
         }
         
         // 发射后短暂延迟然后自动填充炮弹
         private IEnumerator AutoReload () {
-            yield return new WaitForSeconds (autoReloadDelay);
+            yield return new WaitForSeconds (AutoReloadDelay);
 	        Reload();
         }
     }

@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.Serialization;
 
 namespace Scripts.Weapon.Missile
 {
@@ -8,46 +9,46 @@ namespace Scripts.Weapon.Missile
 
 		private bool explodeSelf;
 		[Tooltip("启用其施加恒定的力，否则只在发射时施加力")] 
-		public bool useConstantForce;
+		public bool UseConstantForce;
 		[Tooltip("炮弹速度")] 
-		public float constantForceSpeed;
+		public float ConstantForceSpeed = 5000f;
 		[Tooltip("炮弹发射后进行自我爆炸的时间")] 
-		public float explodeAfter;
+		public float ExplodeAfter = 2.5f;
 		private bool hasStartedExplode;
 
 		private bool hasCollided; // 是否已经发生碰撞
 
 		[Header("爆炸效果预制体")] 
-		public Transform explosionPrefab;
+		public Transform ExplosionPrefab;
 
 		[Header("自定义选项")] 
 		[Tooltip("发射作用力")] 
-		public float force = 5000f;
+		public float Force = 2500f;
 		[Tooltip("炮弹发射后的销毁时间")] 
-		public float despawnTime = 30f;
+		public float DespawnTime = 30f;
 
 		[Header("爆炸选项")] [Tooltip("爆炸半径")] 
-		public float radius = 50.0F;
+		public float Radius = 5f;
 		[Tooltip("爆炸冲击力")] 
-		public float power = 250.0F;
+		public float Power = 2250f;
 
 		[Header("火箭弹")] 
 		[Tooltip("如果投射物有粒子效果则启用")]
-		public bool usesParticles;
+		public bool UsesParticles;
 
-		public ParticleSystem smokeParticles;
-		public ParticleSystem flameParticles;
+		public ParticleSystem SmokeParticles;
+		public ParticleSystem FlameParticles;
 		[Tooltip("销毁延迟，保证粒子效果播放完毕")] 
-		public float destroyDelay;
+		public float DestroyDelay = 5f;
 
 		private void Start()
 		{
 			// 如果不是使用恒定的力 (榴弹发射器)
-			if (!useConstantForce)
+			if (!UseConstantForce)
 			{
 				// 只在一开始施加力的作用使其向前发射
 				GetComponent<Rigidbody>().AddForce
-					(gameObject.transform.forward * force);
+					(gameObject.transform.forward * Force);
 			}
 
 			// 启动销毁计时器
@@ -62,11 +63,11 @@ namespace Scripts.Weapon.Missile
 					Quaternion.LookRotation(GetComponent<Rigidbody>().velocity);
 
 			// 如果使用恒定的力 (RPG)
-			if (useConstantForce == true && !hasStartedExplode)
+			if (UseConstantForce == true && !hasStartedExplode)
 			{
 				// 一直给炮弹施加恒定的力，使其不会抛物线落下
 				GetComponent<Rigidbody>().AddForce
-					(gameObject.transform.forward * constantForceSpeed);
+					(gameObject.transform.forward * ConstantForceSpeed);
 
 				// 开始爆炸
 				StartCoroutine(ExplodeSelf());
@@ -80,11 +81,11 @@ namespace Scripts.Weapon.Missile
 		private IEnumerator ExplodeSelf()
 		{
 			// 等待设定时间后
-			yield return new WaitForSeconds(explodeAfter);
+			yield return new WaitForSeconds(ExplodeAfter);
 			// 如果没有发生碰撞，而生成爆炸效果预制体
 			if (!hasCollided)
 			{
-				Instantiate(explosionPrefab, transform.position, transform.rotation);
+				Instantiate(ExplosionPrefab, transform.position, transform.rotation);
 			}
 
 			// 隐藏炮弹
@@ -94,14 +95,14 @@ namespace Scripts.Weapon.Missile
 			// 禁用碰撞体
 			gameObject.GetComponent<BoxCollider>().isTrigger = true;
 			// 停止粒子效果
-			if (usesParticles == true)
+			if (UsesParticles == true)
 			{
-				flameParticles.GetComponent<ParticleSystem>().Stop();
-				smokeParticles.GetComponent<ParticleSystem>().Stop();
+				FlameParticles.GetComponent<ParticleSystem>().Stop();
+				SmokeParticles.GetComponent<ParticleSystem>().Stop();
 			}
 
 			// 等待粒子效果完全消失
-			yield return new WaitForSeconds(destroyDelay);
+			yield return new WaitForSeconds(DestroyDelay);
 			// 销毁炮弹
 			Destroy(gameObject);
 		}
@@ -109,14 +110,14 @@ namespace Scripts.Weapon.Missile
 		// 发射炮弹后在设定时间后销毁炮弹（无发射碰撞情况）
 		private IEnumerator DestroyTimer()
 		{
-			yield return new WaitForSeconds(despawnTime);
+			yield return new WaitForSeconds(DespawnTime);
 			Destroy(gameObject);
 		}
 
 		// 炮弹发射碰撞后，在设定时间后销毁炮弹
 		private IEnumerator DestroyTimerAfterCollision()
 		{
-			yield return new WaitForSeconds(destroyDelay);
+			yield return new WaitForSeconds(DestroyDelay);
 			Destroy(gameObject);
 		}
 
@@ -133,16 +134,16 @@ namespace Scripts.Weapon.Missile
 			// 禁用碰撞体
 			gameObject.GetComponent<BoxCollider>().isTrigger = true;
 
-			if (usesParticles == true)
+			if (UsesParticles == true)
 			{
-				flameParticles.GetComponent<ParticleSystem>().Stop();
-				smokeParticles.GetComponent<ParticleSystem>().Stop();
+				FlameParticles.GetComponent<ParticleSystem>().Stop();
+				SmokeParticles.GetComponent<ParticleSystem>().Stop();
 			}
 
 			StartCoroutine(DestroyTimerAfterCollision());
 
 			// 在碰撞点生成爆炸效果
-			Instantiate(explosionPrefab, collision.contacts[0].point,
+			Instantiate(ExplosionPrefab, collision.contacts[0].point,
 				Quaternion.LookRotation(collision.contacts[0].normal));
 
 			// 如果命中了靶子
@@ -165,14 +166,14 @@ namespace Scripts.Weapon.Missile
 			Vector3 explosionPos = transform.position;
 			// OverlapSphere的作用是在给定的位置和半径内返回一个碰撞器数组，
 			// 这些碰撞器与球形区域相交。可以用它来实现爆炸伤害或检测附近的物体
-			Collider[] colliders = Physics.OverlapSphere(explosionPos, radius);
+			Collider[] colliders = Physics.OverlapSphere(explosionPos, Radius);
 			foreach (Collider hit in colliders)
 			{
 				Rigidbody rb = hit.GetComponent<Rigidbody>();
 
 				// 对周围的刚体施加力的作用
 				if (rb != null)
-					rb.AddExplosionForce(power * 50, explosionPos, radius, 3.0F);
+					rb.AddExplosionForce(Power * 50, explosionPos, Radius, 3.0F);
 
 				// 如果命中范围内有敌人则对其造成伤害
 				if (hit.gameObject.tag.Equals("Enemy"))
