@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections;
-using System.Threading.Tasks;
+using Scripts.Weapon.Missile;
 using UnityEngine;
 
 namespace Scripts.Weapon
@@ -32,6 +32,7 @@ namespace Scripts.Weapon
             CurrentAmmo--;
 
             MuzzleParticle.Play(); // 枪焰动画
+            StartCoroutine(MuzzleFlashLightShine()); // 枪口火光
             GunAnimator.Play("Fire", IsAiming ? 1 : 0, 0); // 枪械开火后坐力动画
 
             CreateShotShell(); // 发射霰弹
@@ -54,7 +55,7 @@ namespace Scripts.Weapon
             if (baseLayerAnimatorInfo.IsName("Base Layer.Fire") ||
                 aimLayerAnimatorInfo.IsName("Aim Layer.Fire")) return;
             // 弹匣满时、没有备用弹药时不进行换弹
-            if (CurrentAmmo == AmmoInMag || CurrentMaxAmmoCarried == 0) return;
+            if (CurrentAmmo == AmmoEachMag || CurrentMaxAmmoCarried == 0) return;
             // 设置换弹动画触发器和声音
             GunAnimator.SetTrigger("Reload");
             // 保证协程运行
@@ -80,7 +81,7 @@ namespace Scripts.Weapon
                 yield return null;
 
                 // 当前还需装填的子弹数
-                int NeedInsertAmmoNum = AmmoInMag - CurrentAmmo;
+                int NeedInsertAmmoNum = AmmoEachMag - CurrentAmmo;
 
                 // 获取动画播放进度数据
                 AnimatorStateInfo animatorInfo = GunAnimator.GetCurrentAnimatorStateInfo(2);

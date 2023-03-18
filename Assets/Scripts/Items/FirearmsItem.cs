@@ -9,6 +9,7 @@
             SMG,
             Sniper,
             Shotgun,
+            RocketLauncher,
         }
 
         public FirearmsType CurrentFirearmsType;

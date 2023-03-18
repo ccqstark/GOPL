@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using Scripts.Weapon.Missile;
 using UnityEngine;
 
 namespace Scripts.Weapon
@@ -22,6 +23,7 @@ namespace Scripts.Weapon
             CurrentAmmo--;
 
             MuzzleParticle.Play(); // 枪焰动画
+            StartCoroutine(MuzzleFlashLightShine()); // 枪口火光
             GunAnimator.Play("Fire", IsAiming ? 1 : 0, 0); // 枪械开火后坐力动画
 
             CreateBullet(); // 发射子弹
@@ -35,7 +37,7 @@ namespace Scripts.Weapon
         protected override void Reload()
         {
             // 弹匣满时、没有备用弹药时不进行换弹
-            if (CurrentAmmo == AmmoInMag || CurrentMaxAmmoCarried == 0) return;
+            if (CurrentAmmo == AmmoEachMag || CurrentMaxAmmoCarried == 0) return;
             // 避免换弹时可以开枪，先把子弹退回备用弹药
             var tmpCurrentAmmo = CurrentAmmo;
             CurrentAmmo = 0;
