@@ -88,8 +88,10 @@ public class FPCharacterControllerMovement : MonoBehaviour
             else
             {
                 // 站立冲刺/行走 (瞄准状态下不可到达冲刺速度)
-                if (Input.GetKey(KeyCode.LeftShift) && !weaponManager.GetCarriedWeapon().IsAiming)
+                if (Input.GetKey(KeyCode.LeftShift))
                 {
+                    if (weaponManager.GetCarriedWeapon() != null 
+                        && weaponManager.GetCarriedWeapon().IsAiming) return;
                     tmpCurrentSpeed = SprintingSpeed;
                     CharacterState = State.Sprinting;
                 }
