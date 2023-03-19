@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Scripts.Items;
 using Scripts.Weapon;
+using UI;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -42,6 +43,8 @@ public class WeaponManager : MonoBehaviour
 
     private void Update()
     {
+        if (PauseMenu.IsPaused) return;
+        
         // 检查前方是否有物体
         CheckItem();
 

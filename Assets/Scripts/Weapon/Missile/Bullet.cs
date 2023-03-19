@@ -1,22 +1,28 @@
 ﻿using UnityEngine;
+using System.Collections;
 
 namespace Scripts.Weapon.Missile
 {
     public class Bullet : MonoBehaviour
     {
-        public float BulletSpeed;
-        public GameObject ImpactPrefab;
-        public GameObject BleedingEffectPrefab;
+        public float BulletSpeed; // 子弹速度
+        public GameObject ImpactPrefab; // 子弹击中物体效果
+        public GameObject BleedingEffectPrefab;  // 子弹击中血肉效果
         
-        public ImpactAudioData ImpactAudioData;
+        public ImpactAudioData ImpactAudioData; // 子弹击中声
 
         private Transform bulletTransform;
-        private Vector3 prePosition;
+        private Vector3 prePosition; // 子弹上一帧位置
 
+        public float DestroyDelay = 5f; // 自动销毁时间
+        
         private void Start()
         {
             bulletTransform = transform;
             prePosition = bulletTransform.position;
+            
+            // 启动销毁计时器
+            StartCoroutine(DestroyTimer());
         }
 
         private void Update()
@@ -65,6 +71,12 @@ namespace Scripts.Weapon.Missile
             int audioWithTagLength = audioWithTags.ImpactAudioClips.Count;
             AudioClip audioClip = audioWithTags.ImpactAudioClips[Random.Range(0, audioWithTagLength)];
             AudioSource.PlayClipAtPoint(audioClip, hitInfo.point);
+        }
+        
+        private IEnumerator DestroyTimer()
+        {
+            yield return new WaitForSeconds(DestroyDelay);
+            Destroy(gameObject);
         }
     }
 }

@@ -24,8 +24,6 @@ public class FPMouseLook : MonoBehaviour
 
     private void Start()
     {
-        // 隐藏鼠标
-        Cursor.visible = false;
         cameraTransform = transform;
         cameraSpring = GetComponentInChildren<CameraSpring>();
         CurrentMouseSensitivity = DefaultMouseSensitivity;
