@@ -14,9 +14,8 @@ namespace UI
         
         private void Awake()
         {
-            // 隐藏鼠标并锁定
-            Cursor.visible = false;
-            Cursor.lockState = CursorLockMode.Locked;
+            // 初始化进入游戏时各个组件的状态
+            KeepOnGame();
         }
 
         private void Update()
