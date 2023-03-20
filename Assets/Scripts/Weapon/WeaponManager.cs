@@ -23,6 +23,8 @@ public class WeaponManager : MonoBehaviour
     [SerializeField] private FPCharacterControllerMovement fpCharacterControllerMovement;
     private IEnumerator waitingForHolsterEndCoroutine;
 
+    public PickWeaponHint PickWeaponHintUI; // 拾取武器提示UI
+
     public Firearms GetCarriedWeapon() => carriedWeapon;
 
     // 更新武器信息 UI 的子弹数量
@@ -97,16 +99,27 @@ public class WeaponManager : MonoBehaviour
             CheckItemLayerMask);
         if (isItem)
         {
-            // 按 F 拾取武器
+            var hasItem = raycastHitInfo.collider.TryGetComponent(out BaseItem tmpBaseItem);
+            
+            // 显示拾取武器提示
+            if (tmpBaseItem is FirearmsItem tmpFirearmsItem)
+            {
+                PickWeaponHintUI.ShowWeaponHint(tmpFirearmsItem);
+            }
+
+            // 按 F 拾取武器/物品
             if (Input.GetKeyDown(KeyCode.F))
             {
-                var hasItem = raycastHitInfo.collider.TryGetComponent(out BaseItem tmpBaseItem);
                 if (hasItem)
                 {
                     PickupWeapon(tmpBaseItem);
                     PickupAttachment(tmpBaseItem);
                 }
             }
+        }
+        else
+        {
+            PickWeaponHintUI.HindWeaponHint();
         }
     }
     
