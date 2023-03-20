@@ -11,7 +11,6 @@ public class WeaponManager : MonoBehaviour
 {
     public Firearms MainWeapon; // 主武器
     public Firearms SecondaryWeapon; // 副武器
-    public Text AmmoCountTextLabel; // 子弹数显示UI
     
     public List<Firearms> Arms = new List<Firearms>(); // 用于存储不同武器模型(带手)
     public Transform WorldCameraTransform; // 枪械的Camera
@@ -24,15 +23,10 @@ public class WeaponManager : MonoBehaviour
     private IEnumerator waitingForHolsterEndCoroutine;
 
     public PickWeaponHint PickWeaponHintUI; // 拾取武器提示UI
-
+    public WeaponInfo WeaponInfoUI; // 当前武器信息显示UI
+    
     public Firearms GetCarriedWeapon() => carriedWeapon;
 
-    // 更新武器信息 UI 的子弹数量
-    private void UpdateAmmoInfo(int _ammo, int _remainingAmmo)
-    {
-        AmmoCountTextLabel.text = _ammo + "/" + _remainingAmmo;
-    }
-    
     private void Start()
     {
         // 主武器不为空
@@ -85,7 +79,7 @@ public class WeaponManager : MonoBehaviour
         }
         
         // 更新子弹数
-        UpdateAmmoInfo(carriedWeapon.GetCurrentAmmo(), 
+        WeaponInfoUI.UpdateAmmoInfo(carriedWeapon.GetCurrentAmmo(), 
             carriedWeapon.GetCurrentMaxAmmoCarried());
     }
 
@@ -258,5 +252,7 @@ public class WeaponManager : MonoBehaviour
         carriedWeapon = targetWeapon;
         carriedWeapon.gameObject.SetActive(true);
         fpCharacterControllerMovement.SetAnimator(carriedWeapon.GunAnimator);
+        // 显示武器UI信息
+        WeaponInfoUI.ShowWeaponInfo(targetWeapon.name, targetWeapon.WeaponName);
     }
 }

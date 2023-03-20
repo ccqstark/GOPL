@@ -6,6 +6,9 @@ namespace Scripts.Weapon
 {
     public abstract class Firearms : MonoBehaviour, IWeapon
     {
+        [Header("武器名称")] 
+        public string WeaponName;
+        
         [Header("相机")] public Camera EyeCamera;
         public Camera GunCamera;
 
