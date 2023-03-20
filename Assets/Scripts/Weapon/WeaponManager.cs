@@ -3,9 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Scripts.Items;
 using Scripts.Weapon;
-using UI;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class WeaponManager : MonoBehaviour
 {
