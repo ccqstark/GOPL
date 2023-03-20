@@ -43,6 +43,8 @@ namespace UI
             Cursor.lockState = CursorLockMode.None;
             // 显示暂停面板
             PausePanel.SetActive(true);
+            // 暂停声音
+            AudioListener.pause = true;
         }
 
         public void KeepOnGame()
@@ -55,6 +57,8 @@ namespace UI
             Cursor.lockState = CursorLockMode.Locked;
             // 隐藏暂停面板
             PausePanel.SetActive(false);
+            // 播放声音
+            AudioListener.pause = false;
         }
 
         // 回到主菜单
