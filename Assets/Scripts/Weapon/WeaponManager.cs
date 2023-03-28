@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using Scripts.Items;
 using Scripts.Weapon;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class WeaponManager : MonoBehaviour
 {
@@ -11,7 +12,7 @@ public class WeaponManager : MonoBehaviour
     public Firearms SecondaryWeapon; // 副武器
     
     public List<Firearms> Arms = new List<Firearms>(); // 用于存储不同武器模型(带手)
-    public Transform WorldCameraTransform; // 枪械的Camera
+    public Transform GunCameraTransform; // 枪械的Camera
     public float RaycastMaxDistance = 5; // 捡东西的最大检测距离
     public LayerMask CheckItemLayerMask; // 检查物品过滤用的层
 
@@ -84,8 +85,8 @@ public class WeaponManager : MonoBehaviour
     private void CheckItem()
     {
         // 用射线检测视野内可互动物体
-        bool isItem = Physics.Raycast(WorldCameraTransform.position,
-            WorldCameraTransform.forward,
+        bool isItem = Physics.Raycast(GunCameraTransform.position,
+            GunCameraTransform.forward,
             out RaycastHit raycastHitInfo,
             RaycastMaxDistance,
             CheckItemLayerMask);
@@ -128,6 +129,7 @@ public class WeaponManager : MonoBehaviour
                 {
                     MainWeapon = tmpArm;
                 }
+                // 替换副武器
                 else
                 {
                     SecondaryWeapon = tmpArm;

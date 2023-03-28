@@ -8,6 +8,9 @@ namespace Scripts.Items
         {
             Firearms,
             Attachment,
+            Supplies,
+            MissionKey,
+            Collection,
             Other
         }
 

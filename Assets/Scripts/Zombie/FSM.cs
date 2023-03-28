@@ -48,6 +48,7 @@ public class FSM : MonoBehaviour
         // 默认状态为空闲
         TransitionState(StateType.Idle);
     }
+    
     void Update()
     {
         // 实时更新当前敌人与玩家的距离
@@ -61,6 +62,7 @@ public class FSM : MonoBehaviour
         currentState.OnUpdate();
     }
 
+    // 状态转换
     public void TransitionState(StateType type)
     {
         if (currentState != null)
