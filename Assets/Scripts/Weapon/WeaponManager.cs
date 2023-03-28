@@ -77,6 +77,12 @@ public class WeaponManager : MonoBehaviour
             carriedWeapon.Aiming(false);
         }
         
+        // 拿下 T 键进行武器检视
+        if (Input.GetKeyDown(KeyCode.T))
+        {
+            carriedWeapon.GunAnimator.SetTrigger("Inspect");
+        }
+        
         // 更新子弹数
         WeaponInfoUI.UpdateAmmoInfo(carriedWeapon.GetCurrentAmmo(), 
             carriedWeapon.GetCurrentMaxAmmoCarried());
