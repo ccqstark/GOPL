@@ -8,22 +8,28 @@ using UnityEngine.Serialization;
 
 public class WeaponManager : MonoBehaviour
 {
+    [Header("携带武器")]
     public Firearms MainWeapon; // 主武器
     public Firearms SecondaryWeapon; // 副武器
+    private Firearms carriedWeapon; // 当前手持的武器
     
+    [Header("拾取武器")]
     public List<Firearms> Arms = new List<Firearms>(); // 用于存储不同武器模型(带手)
     public Transform GunCameraTransform; // 枪械的Camera
     public float RaycastMaxDistance = 5; // 捡东西的最大检测距离
     public LayerMask CheckItemLayerMask; // 检查物品过滤用的层
 
-    private Firearms carriedWeapon; // 当前手持的武器
-
     [SerializeField] private FPCharacterControllerMovement fpCharacterControllerMovement;
     private IEnumerator waitingForHolsterEndCoroutine;
 
+    [Header("武器UI")]
     public PickWeaponHint PickWeaponHintUI; // 拾取武器提示UI
     public WeaponInfo WeaponInfoUI; // 当前武器信息显示UI
     
+    [Header("手雷")]
+    public float GrenadeSpawnDelay;
+    public Transform GrenadePrefab;
+
     public Firearms GetCarriedWeapon() => carriedWeapon;
 
     private void Start()
@@ -81,6 +87,13 @@ public class WeaponManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.T))
         {
             carriedWeapon.GunAnimator.SetTrigger("Inspect");
+        }
+        
+        // 按下 G 键或鼠标滚轮投掷手雷
+        if (Input.GetKeyDown (KeyCode.G) || Input.GetMouseButtonDown(2))
+        {
+            StartCoroutine (ThrowHandGrenade());
+            carriedWeapon.GunAnimator.Play("GrenadeThrow", 0, 0.0f);
         }
         
         // 更新子弹数
@@ -261,4 +274,15 @@ public class WeaponManager : MonoBehaviour
         // 显示武器UI信息
         WeaponInfoUI.ShowWeaponInfo(targetWeapon.name, targetWeapon.WeaponName);
     }
+    
+    // 扔手雷
+    private IEnumerator ThrowHandGrenade() {
+        // 扔手雷延迟
+        yield return new WaitForSeconds (GrenadeSpawnDelay);
+        // 生成手雷预制体
+        Instantiate(GrenadePrefab, 
+            carriedWeapon.GrenadeSpawnPoint.position, 
+            carriedWeapon.GrenadeSpawnPoint.rotation);
+    }
+    
 }

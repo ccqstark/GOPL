@@ -9,25 +9,31 @@ namespace Scripts.Weapon
         [Header("武器名称")] 
         public string WeaponName;
         
-        [Header("相机")] public Camera EyeCamera;
+        [Header("相机")] 
+        public Camera EyeCamera;
         public Camera GunCamera;
 
-        [Header("准心")] private GameObject crosshair; // 准心UI
+        [Header("准心")] 
+        private GameObject crosshair; // 准心UI
         private CrosshairUI crosshairUI; // 准心UI的脚本控制对象
 
-        [Header("枪焰与抛壳特效")] public ParticleSystem MuzzleParticle; // 枪口粒子特效
+        [Header("枪焰与抛壳特效")] 
+        public ParticleSystem MuzzleParticle; // 枪口粒子特效
         public ParticleSystem CasingParticle; // 抛壳粒子特效
         public Transform BulletSpawnPoint; // 子弹出射口
 
-        [Header("枪口火光光源")] public Light MuzzleFlashLight;
+        [Header("枪口火光光源")] 
+        public Light MuzzleFlashLight;
         public float LightDuration = 0.02f;
 
-        [Header("枪械音效")] public AudioSource FirearmsShootingAudioSource; // 开枪声播放源
+        [Header("枪械音效")] 
+        public AudioSource FirearmsShootingAudioSource; // 开枪声播放源
         public AudioSource FirearmsReloadAudioSource; // 换弹声播放源
         public FirearmsAudioData FirearmsAudioData; // 枪械声音音源
         public ImpactAudioData ImpactAudioData; // 子弹撞击物体的声音
 
-        [Header("子弹")] public float FireRate; // 射速 (1s发射的子弹数)
+        [Header("子弹")] 
+        public float FireRate; // 射速 (1s发射的子弹数)
         public int Damage; // 子弹的伤害
         public int AmmoEachMag = 30; // 一个弹匣子弹数量
         public int MaxAmmoCarried = 120; // 最大子弹携带数量
@@ -36,10 +42,14 @@ namespace Scripts.Weapon
         public GameObject BleedingEffectPrefab; // 出血效果预制体
         public float SpreadAngle = 0.05f; // 散射角度
 
-        [Header("瞄具")] public List<ScopeInfo> ScopeInfos; // 可用瞄具列表
+        [Header("瞄具")] 
+        public List<ScopeInfo> ScopeInfos; // 可用瞄具列表
         public ScopeInfo BaseIronSight; // 基础瞄具
         protected ScopeInfo rigoutScopeInfo; // 当前装备的瞄具
 
+        [Header("手雷")]
+        public Transform GrenadeSpawnPoint; // 手雷投掷点
+        
         public int GetCurrentAmmo() => CurrentAmmo;
         public int GetCurrentMaxAmmoCarried() => CurrentMaxAmmoCarried;
 
