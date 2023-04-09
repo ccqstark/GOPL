@@ -58,6 +58,7 @@ public class FPMouseLook : MonoBehaviour
         CharacterTransform.localRotation = Quaternion.Slerp(CharacterTransform.localRotation, targetRotationY, SmoothTime * Time.deltaTime);
     }
 
+    // 计算后坐力偏移
     private void CalculateRecoilOffset()
     {
         currentRecoilTime += Time.deltaTime;

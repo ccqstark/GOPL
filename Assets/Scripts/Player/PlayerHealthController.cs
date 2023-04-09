@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+/*
+ * 角色生命系统
+ */
 public class PlayerHealthController : MonoBehaviour
 {
     

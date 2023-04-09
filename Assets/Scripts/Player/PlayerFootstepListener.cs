@@ -1,5 +1,8 @@
 using UnityEngine;
 
+/*
+ * 角色脚步声
+ */
 public class PlayerFootstepListener : MonoBehaviour
 {
     public FootstepAudioData FootstepAudioData;

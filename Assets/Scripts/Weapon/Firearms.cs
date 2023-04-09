@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/*
+ * 火器
+ */
 namespace Scripts.Weapon
 {
     public abstract class Firearms : MonoBehaviour, IWeapon

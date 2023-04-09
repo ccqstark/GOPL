@@ -1,6 +1,9 @@
 ﻿using System;
 using UnityEngine;
 
+/*
+ * 镜头震动
+ */
 public class CameraSpring : MonoBehaviour
 {
     public float Frequency = 25; // 震动频率

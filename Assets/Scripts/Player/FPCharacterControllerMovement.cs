@@ -1,6 +1,9 @@
 ﻿using System.Collections;
 using UnityEngine;
 
+/*
+ * 角色控制器
+ */
 public class FPCharacterControllerMovement : MonoBehaviour
 {
     private CharacterController characterController; // 角色控制器

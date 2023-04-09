@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using Scripts.Items;
 using Scripts.Weapon;
 using UnityEngine;
-using UnityEngine.Serialization;
+using Random = UnityEngine.Random;
 
 public class WeaponManager : MonoBehaviour
 {
@@ -30,6 +30,10 @@ public class WeaponManager : MonoBehaviour
     public float GrenadeSpawnDelay;
     public Transform GrenadePrefab;
 
+    [Header("小刀近战")] 
+    public float KnifeAttackDistance;
+    public int KnifeAttackDamageValue;
+    
     public Firearms GetCarriedWeapon() => carriedWeapon;
 
     private void Start()
@@ -94,6 +98,14 @@ public class WeaponManager : MonoBehaviour
         {
             StartCoroutine (ThrowHandGrenade());
             carriedWeapon.GunAnimator.Play("GrenadeThrow", 0, 0.0f);
+        }
+        
+        // 按下 E 键使用小刀近战攻击
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            // 在两种近战刀法中随机选择一种
+            carriedWeapon.GunAnimator.Play(Random.Range(0f, 1f) < 0.5f ? "Knife Attack 1" : "Knife Attack 2", 0, 0f);
+            StartCoroutine(KnifeAttackDamage());
         }
         
         // 更新子弹数
@@ -284,5 +296,42 @@ public class WeaponManager : MonoBehaviour
             carriedWeapon.GrenadeSpawnPoint.position, 
             carriedWeapon.GrenadeSpawnPoint.rotation);
     }
-    
+
+    private IEnumerator KnifeAttackDamage()
+    {
+        while (true)
+        {
+            yield return null;
+            
+            // 获取动画播放进度数据
+            AnimatorStateInfo animatorInfo = carriedWeapon.GunAnimator.GetCurrentAnimatorStateInfo(0);
+            double playingProgressNumber = animatorInfo.normalizedTime;
+            double playingIntegerPart = Math.Truncate(playingProgressNumber); // 播放进度整数部分
+            double playingDecimalPart = playingProgressNumber - playingIntegerPart; // 播放进度小数部分
+
+            // debug: 发射出一条射线检测是否攻击到了敌人
+#if UNITY_EDITOR
+            Debug.DrawRay(transform.position,
+                transform.forward, Color.red);
+#endif
+
+            // 检测小刀攻击动画播放进度到大概40%时，进行攻击检测和造成伤害
+            if ((animatorInfo.IsName("Base Layer.Knife Attack 1") ||
+                 animatorInfo.IsName("Base Layer.Knife Attack 2")) &&
+                playingDecimalPart >= 0.4)
+            {
+                // 当射线检测到敌人时，伤害才有效
+                RaycastHit hit;
+                if (Physics.Raycast(transform.position,
+                        transform.forward, out hit, KnifeAttackDistance)
+                    && hit.collider.CompareTag("Enemy"))
+                {
+                    // 调用敌人血量模块进行扣血
+                    var enemy = hit.collider.gameObject.GetComponent<EnemyFeature>();
+                    enemy.TakeDamage(KnifeAttackDamageValue);
+                }
+                yield break;
+            }
+        }
+    }
 }
