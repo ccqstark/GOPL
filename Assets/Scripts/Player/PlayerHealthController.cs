@@ -11,7 +11,7 @@ public class PlayerHealthController : MonoBehaviour
     
     public int CurrentHealth; // 当前血量
 
-    public int MaxHealth; // 最大血量
+    public int MaxHealth = 100; // 最大血量
 
     public Image BloodSplatterImage; // 受伤血迹图片
 
@@ -21,6 +21,9 @@ public class PlayerHealthController : MonoBehaviour
     
     private float timer; // 呼吸回血计时器
 
+    public int GetCurrentHealth() => CurrentHealth;
+    public int GetMaxHealth() => MaxHealth;
+    
     void Start()
     {
         CurrentHealth = MaxHealth;
