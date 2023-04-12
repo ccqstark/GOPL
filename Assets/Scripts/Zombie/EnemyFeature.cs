@@ -9,11 +9,13 @@ public class EnemyFeature : MonoBehaviour
 {
 
     private FSM stateManager;
+    private EnemyHealthBar enemyHealthBar;
 
     // Start is called before the first frame update
     void Start()
     {
         stateManager = GetComponent<FSM>();
+        enemyHealthBar = GetComponentInChildren<EnemyHealthBar>();
     }
     
     // Update is called once per frame
@@ -22,12 +24,18 @@ public class EnemyFeature : MonoBehaviour
         
     }
 
+    // 受到伤害
     public void TakeDamage(int damageValue)
     {
-        stateManager.EnemyParameter.Health -= damageValue;
+        // 扣除血量
+        stateManager.EnemyParameter.CurrentHealth -= damageValue;
+        // 更新血条UI
+        enemyHealthBar.UpdateHealthBar(stateManager.EnemyParameter.CurrentHealth, 
+            stateManager.EnemyParameter.MaxHealth);
         // 触发死亡
-        if (stateManager.EnemyParameter.Health <= 0)
+        if (stateManager.EnemyParameter.CurrentHealth <= 0)
         {
+            enemyHealthBar.DestroyBarUI();
             stateManager.TransitionState(StateType.Death);
         }
         

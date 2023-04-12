@@ -7,7 +7,9 @@ using UnityEngine;
 [Serializable]
 public class EnemyParameter
 {
-    public int Health; // 血量
+    public int CurrentHealth; // 当前血量
+    
+    public int MaxHealth; // 最大血量
 
     public float Height; // 高度
     
