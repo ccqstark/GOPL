@@ -27,8 +27,8 @@ public class EnemyHealthBar : MonoBehaviour
         HealthBarSprite.fillAmount = currentHealth / maxHealth;
     }
 
-    public void DestroyBarUI()
+    public void DisableBarUI()
     {
-        Destroy(gameObject);
+        gameObject.SetActive(false);
     }
 }

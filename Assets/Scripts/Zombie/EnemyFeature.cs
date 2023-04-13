@@ -35,10 +35,9 @@ public class EnemyFeature : MonoBehaviour
         // 触发死亡
         if (stateManager.EnemyParameter.CurrentHealth <= 0)
         {
-            enemyHealthBar.DestroyBarUI();
+            enemyHealthBar.DisableBarUI();
             stateManager.TransitionState(StateType.Death);
         }
-        
         // 概率触发受伤硬直动画
         if (ProbabilisticTrigger(stateManager.EnemyParameter.InjuryProbability))
         {
