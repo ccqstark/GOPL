@@ -11,6 +11,8 @@ public class FSM : MonoBehaviour
     
     private IState currentState; // 当前状态
 
+    public StateType CurrenStateType; // 当前状态类型
+    
     private Dictionary<StateType, IState> states = new Dictionary<StateType, IState>(); // 状态字典，用于注册状态
     
     private Transform enemyTransform; // 当前敌人变换组件
@@ -70,6 +72,7 @@ public class FSM : MonoBehaviour
             currentState.OnExit();
         }
         currentState = states[type];
+        CurrenStateType = type;
         currentState.OnEnter();
     }
     

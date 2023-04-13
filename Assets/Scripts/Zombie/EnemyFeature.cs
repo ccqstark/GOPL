@@ -27,6 +27,7 @@ public class EnemyFeature : MonoBehaviour
     // 受到伤害
     public void TakeDamage(int damageValue)
     {
+        if (stateManager.CurrenStateType == StateType.Death) return;
         // 扣除血量
         stateManager.EnemyParameter.CurrentHealth -= damageValue;
         // 更新血条UI
@@ -37,6 +38,8 @@ public class EnemyFeature : MonoBehaviour
         {
             enemyHealthBar.DisableBarUI();
             stateManager.TransitionState(StateType.Death);
+            // 得分
+            ScoreSystem.AddScore(1000);
         }
         // 概率触发受伤硬直动画
         if (ProbabilisticTrigger(stateManager.EnemyParameter.InjuryProbability))
