@@ -38,6 +38,6 @@ public class PlayerHealthBar : MonoBehaviour
         // 更新血条UI
         HealthBarSlider.value = currentSliderValue;
         // 更新血量文字
-        HealthValueText.SetText(HealthBarSlider.value + "/" + maxHealth);
+        HealthValueText.SetText(HealthBarSlider.value + "%");
     }
 }

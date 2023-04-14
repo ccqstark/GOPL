@@ -14,7 +14,8 @@ public class WeaponInfo : MonoBehaviour
     [Tooltip("武器图标")] 
     public Image WeaponIconImage;
     [Tooltip("子弹数量")] 
-    public TMP_Text AmmoCountText;
+    public TMP_Text CurrentAmmoCountText;
+    public TMP_Text RemainingAmmoCountText;
 
     private void Start()
     {
@@ -41,8 +42,9 @@ public class WeaponInfo : MonoBehaviour
     }
 
     // 更新武器信息 UI 的子弹数量
-    public void UpdateAmmoInfo(int ammo, int remainingAmmo)
+    public void UpdateAmmoInfo(int currentAmmo, int remainingAmmo)
     {
-        AmmoCountText.SetText(ammo + " / " + remainingAmmo);
+        CurrentAmmoCountText.SetText(currentAmmo.ToString());
+        RemainingAmmoCountText.SetText(remainingAmmo.ToString());
     }
 }
