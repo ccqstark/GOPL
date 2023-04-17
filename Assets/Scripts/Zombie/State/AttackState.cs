@@ -147,7 +147,7 @@ public class AttackState : IState
             mf = go.AddComponent<MeshFilter>();
             mr = go.AddComponent<MeshRenderer>();
 
-            shader = Shader.Find("Unlit/Color");
+            shader = Shader.Find("UI/Default");
         }
 
         mesh.vertices = vertices.ToArray();
@@ -156,7 +156,9 @@ public class AttackState : IState
         mf.mesh = mesh;
         mr.material.shader = shader;
         mr.material.color = Color.red;
-
+        Color color = mr.material.color;
+        color.a = 0.3f; // 0为完全透明，1为完全不透明
+        mr.material.color = color;
         return go;
     }
 }

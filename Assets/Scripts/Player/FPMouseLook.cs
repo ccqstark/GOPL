@@ -32,12 +32,12 @@ public class FPMouseLook : MonoBehaviour
     private void Update()
     {
         // 获取鼠标两个方向的运动增量
-        var tmpMouseX = Input.GetAxis("Mouse X");
-        var tmpMouseY = Input.GetAxis("Mouse Y");
+        var mouseInputX = Input.GetAxis("Mouse X");
+        var mouseInputY = Input.GetAxis("Mouse Y");
 
         // 在原来角度的基础上进行变化（变化量=鼠标输入×灵敏度系数）
-        cameraRotation.y += tmpMouseX * CurrentMouseSensitivity;
-        cameraRotation.x -= tmpMouseY * CurrentMouseSensitivity;
+        cameraRotation.y += mouseInputX * CurrentMouseSensitivity;
+        cameraRotation.x -= mouseInputY * CurrentMouseSensitivity;
 
         // 枪的后坐力
         CalculateRecoilOffset();

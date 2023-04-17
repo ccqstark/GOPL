@@ -7,7 +7,7 @@ namespace Db
 {
     public class DbUtil
     {
-        private static string dbPath = Application.dataPath + "/DB/gopl.db";
+        private static string dbPath = Application.persistentDataPath + "/DB/gopl.db";
 
         private static SqliteConnection dbConn;
         
