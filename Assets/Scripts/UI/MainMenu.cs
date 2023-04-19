@@ -13,7 +13,7 @@ public class MainMenu : MonoBehaviour
     // 开始游戏，默认进行关卡一
     public void PlayGame()
     {
-        SceneManager.LoadScene("LevelTwo");
+        SceneManager.LoadScene("LevelOne");
     }
 
     // 退出游戏
