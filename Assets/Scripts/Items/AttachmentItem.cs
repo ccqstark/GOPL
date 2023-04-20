@@ -1,15 +1,13 @@
-using System.Collections;
-using System.Collections.Generic;
-using Scripts.Items;
-using UnityEngine;
-
-public class AttachmentItem : BaseItem
+namespace Scripts.Items
 {
-    public enum AttachmentType
+    public class AttachmentItem : BaseItem
     {
-        Scope,
-        Other
-    }
+        public enum AttachmentType
+        {
+            Scope,
+            Other
+        }
 
-    public AttachmentType CurrentAttachmentType;
+        public AttachmentType CurrentAttachmentType;
+    }
 }

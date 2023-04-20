@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Scripts.Items;
 using Scripts.Weapon;
+using TMPro;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -33,6 +34,12 @@ public class WeaponManager : MonoBehaviour
     [Header("小刀近战")] 
     public float KnifeAttackDistance;
     public int KnifeAttackDamageValue;
+
+    [Header("普通物品拾取")] 
+    public TMP_Text NoWeaponItemHint;
+    public PlayerHealthController PlayerHealth;
+    public PlotSystem PlotSystemObj;
+    public ScoreSystem ScoreSystemObj;
     
     public Firearms GetCarriedWeapon() => carriedWeapon;
 
@@ -124,26 +131,67 @@ public class WeaponManager : MonoBehaviour
         if (isItem)
         {
             var hasItem = raycastHitInfo.collider.TryGetComponent(out BaseItem tmpBaseItem);
+            if (!hasItem) return;
             
-            // 显示拾取武器提示
+            // 武器
             if (tmpBaseItem is FirearmsItem tmpFirearmsItem)
             {
+                // 显示拾取武器提示
                 PickWeaponHintUI.ShowWeaponHint(tmpFirearmsItem);
-            }
-
-            // 按 F 拾取武器/物品
-            if (Input.GetKeyDown(KeyCode.F))
-            {
-                if (hasItem)
+                // 按 F 拾取武器/物品
+                if (Input.GetKeyDown(KeyCode.F))
                 {
                     PickupWeapon(tmpBaseItem);
                     PickupAttachment(tmpBaseItem);
                 }
             }
+            
+            // 补给品
+            else if (tmpBaseItem is SuppliesItem tmpSuppliesItem)
+            {
+                NoWeaponItemHint.text = "按F拾取 " + tmpSuppliesItem.ItemName;
+
+                // 医疗包
+                if (tmpSuppliesItem.CurrentSuppliesType == 
+                    SuppliesItem.SuppliesType.MedicalKit)
+                {
+                    if (Input.GetKeyDown(KeyCode.F))
+                    {
+                        PlayerHealth.AddHealth(tmpSuppliesItem.Value);
+                        tmpSuppliesItem.DestroyItSelf();
+                    }
+                }
+                
+                // 子弹
+                else if (tmpSuppliesItem.CurrentSuppliesType ==
+                         SuppliesItem.SuppliesType.Ammo)
+                {
+                    if (Input.GetKeyDown(KeyCode.F))
+                    {
+                        GetCarriedWeapon().CurrentMaxAmmoCarried += tmpSuppliesItem.Value;
+                        tmpSuppliesItem.DestroyItSelf();
+                    }
+                }
+                
+            }
+
+            // 关键道具
+            else if (tmpBaseItem is MissionKeyItem tmpMissionKeyItem)
+            {
+                NoWeaponItemHint.text = "按F拾取 " + tmpMissionKeyItem.ItemName;
+                if (Input.GetKeyDown(KeyCode.F))
+                {
+                    PlotSystemObj.AddMissionNum();
+                    ScoreSystemObj.AddScore(500);
+                    tmpMissionKeyItem.DestroyItSelf();
+                }
+            }
+ 
         }
         else
         {
             PickWeaponHintUI.HindWeaponHint();
+            NoWeaponItemHint.text = "";
         }
     }
     

@@ -52,13 +52,13 @@ namespace Scripts.Weapon
 
         [Header("手雷")]
         public Transform GrenadeSpawnPoint; // 手雷投掷点
-        
-        public int GetCurrentAmmo() => CurrentAmmo;
-        public int GetCurrentMaxAmmoCarried() => CurrentMaxAmmoCarried;
 
         protected int CurrentAmmo; // 当前弹匣里的子弹数量
-        protected int CurrentMaxAmmoCarried; // 当前携带最大子弹数
+        public int CurrentMaxAmmoCarried; // 当前携带最大子弹数
 
+        public int GetCurrentAmmo() => CurrentAmmo;
+        public int GetCurrentMaxAmmoCarried() => CurrentMaxAmmoCarried;
+        
         protected float LastFireTime; // 上一次开火时间
 
         internal Animator GunAnimator; // 动画

@@ -19,6 +19,12 @@ namespace Scripts.Items
         public int ItemId;
 
         public string ItemName;
+
+        public void DestroyItSelf()
+        {
+            Destroy(gameObject);
+        }
+        
     }
     
 }
