@@ -1,8 +1,14 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class MainMenu : MonoBehaviour
 {
+
+    public LoginSystem Login;
+    public Button GoToLogin;
+
+    
     private void Awake()
     {
         // 避免从游戏中退出后没有动画和声音
@@ -13,7 +19,15 @@ public class MainMenu : MonoBehaviour
     // 开始游戏，默认进行关卡一
     public void PlayGame()
     {
-        SceneManager.LoadScene("LevelOne");
+        // 判断是否登录
+        if (Login.IsLogin)
+        {
+            SceneManager.LoadScene("LevelOne");
+        }
+        else
+        {
+            GoToLogin.onClick.Invoke();
+        }
     }
 
     // 退出游戏

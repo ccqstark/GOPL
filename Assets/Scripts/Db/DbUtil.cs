@@ -38,6 +38,15 @@ namespace Db
             
             return dataReader;
         }
+        
+        // 插入数据
+        public static void InsertData(string insertSQL)
+        {
+            var dbConn = GetDbConnection();
+            IDbCommand cmnd = dbConn.CreateCommand();
+            cmnd.CommandText = insertSQL;
+            cmnd.ExecuteNonQuery();
+        }
 
         // 关闭连接，释放资源
         public static void CloseDbConn()
