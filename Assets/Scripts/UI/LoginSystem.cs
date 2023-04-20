@@ -1,6 +1,7 @@
 ﻿using Db;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 public class LoginSystem : MonoBehaviour
@@ -9,7 +10,7 @@ public class LoginSystem : MonoBehaviour
     public TMP_InputField PswInput;
     public Button GoToLogin;
     public TMP_Text WelcomeText;
-    public Button BackToMainMenu;
+    public Button BackToMainMenuButton;
     public TMP_Text Hint; // 提示文字
 
     // 当前是否已经登陆以及登陆用户信息
@@ -33,7 +34,7 @@ password = '{psw}'";
             NowLoginUsername = username;
             NowLoginNickname = dataResult[2].ToString();
             // 跳转到主菜单
-            BackToMainMenu.onClick.Invoke();
+            BackToMainMenuButton.onClick.Invoke();
             // 右下角显示用户昵称
             ShowWelcome(dataResult[2].ToString());
         }

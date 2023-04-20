@@ -10408,7 +10408,7 @@ MonoBehaviour:
   PswInput: {fileID: 72168012}
   GoToLogin: {fileID: 1537862043}
   WelcomeText: {fileID: 2125056290}
-  BackToMainMenu: {fileID: 383947403}
+  BackToMainMenuButton: {fileID: 383947403}
   Hint: {fileID: 431284105}
   IsLogin: 0
   NowLoginUsername: 

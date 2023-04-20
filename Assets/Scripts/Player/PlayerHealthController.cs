@@ -21,6 +21,8 @@ public class PlayerHealthController : MonoBehaviour
     
     private float timer; // 呼吸回血计时器
 
+    public GameOver GameOverObj;
+    
     public int GetCurrentHealth() => CurrentHealth;
     public int GetMaxHealth() => MaxHealth;
     
@@ -52,7 +54,7 @@ public class PlayerHealthController : MonoBehaviour
         if (CurrentHealth <= 0)
         {
             // 触发死亡
-            Debug.Log("玩家死亡");
+            GameOverObj.DoGameOver();
         }
     }
 

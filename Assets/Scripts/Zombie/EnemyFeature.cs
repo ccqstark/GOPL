@@ -10,12 +10,16 @@ public class EnemyFeature : MonoBehaviour
 
     private FSM stateManager;
     private EnemyHealthBar enemyHealthBar;
+    private ScoreSystem scoreSystemObj;
+    private PlotSystem plotSystemObj;
 
     // Start is called before the first frame update
     void Start()
     {
         stateManager = GetComponent<FSM>();
         enemyHealthBar = GetComponentInChildren<EnemyHealthBar>();
+        scoreSystemObj = GameObject.Find("UI/Score").GetComponent<ScoreSystem>();
+        plotSystemObj = GameObject.Find("UI/Plot").GetComponent<PlotSystem>();
     }
     
     // Update is called once per frame
@@ -39,7 +43,9 @@ public class EnemyFeature : MonoBehaviour
             enemyHealthBar.DisableBarUI();
             stateManager.TransitionState(StateType.Death);
             // 得分
-            ScoreSystem.AddScore(1000);
+            scoreSystemObj.AddScore(1000);
+            // 击杀数量+1
+            plotSystemObj.EnemyAlreadyKillNum += 1;
         }
         // 概率触发受伤硬直动画
         if (ProbabilisticTrigger(stateManager.EnemyParameter.InjuryProbability))
