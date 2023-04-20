@@ -45,7 +45,7 @@ public class EnemyFeature : MonoBehaviour
             // 得分
             scoreSystemObj.AddScore(1000);
             // 击杀数量+1
-            plotSystemObj.EnemyAlreadyKillNum += 1;
+            plotSystemObj.AddKillNum();
         }
         // 概率触发受伤硬直动画
         if (ProbabilisticTrigger(stateManager.EnemyParameter.InjuryProbability))
