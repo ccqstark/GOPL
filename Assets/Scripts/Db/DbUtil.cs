@@ -51,7 +51,7 @@ namespace Db
         // 关闭连接，释放资源
         public static void CloseDbConn()
         {
-            dbConn.Clone();
+            dbConn.Close();
         }
     }
 }

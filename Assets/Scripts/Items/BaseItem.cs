@@ -20,6 +20,8 @@ namespace Scripts.Items
 
         public string ItemName;
 
+        public AudioClip SoundEffect;
+        
         public void DestroyItSelf()
         {
             Destroy(gameObject);

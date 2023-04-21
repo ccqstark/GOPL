@@ -25,6 +25,12 @@ public class EnemyParameter
 
     public float AttackDistance; // 攻击距离
     
+    public float SectorDistance; // 扇形范围大小
+    
+    public float SectorAngle; // 扇形的角度
+
+    public int Damage; // 单次造成的伤害值
+    
     public Transform InitialPoint; // 初始位置
 
     public Animator Animator; // 动画控制器

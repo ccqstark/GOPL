@@ -18,11 +18,7 @@ public class AttackState : IState
     private Vector3 attackDetectDirection; // 攻击检测方向
 
     private Transform playerTarget; // 被攻击目标（玩家）
-    
-    private float sectorDistance = 3; // 扇形范围大小
-    
-    private float sectorAngle = 150; // 扇形的角度
-    
+
     public AttackState(FSM manager)
     {
         this.stateManager = manager;
@@ -86,15 +82,15 @@ public class AttackState : IState
         Vector3 enemyToTargetDirection = playerTarget.position - enemyTransform.position;
         // 求两个向量的夹角
         float angle = Mathf.Acos(Vector3.Dot(attackDetectDirection.normalized, enemyToTargetDirection.normalized)) * Mathf.Rad2Deg;
-        if (distance < sectorDistance)
+        if (distance < stateManager.EnemyParameter.SectorDistance)
         {
             // 绘制扇形区域
             // ToDrawSectorSolid(enemyTransform.position, sectorAngle, sectorDistance);
 
-            if (angle <= sectorAngle * 0.5f)
+            if (angle <= stateManager.EnemyParameter.SectorAngle * 0.5f)
             {
                 // 调用玩家血量模块进行扣血
-                playerTarget.GetComponent<PlayerHealthController>().TakeDamage(20);
+                playerTarget.GetComponent<PlayerHealthController>().TakeDamage(stateManager.EnemyParameter.Damage);
             }
         }
     }

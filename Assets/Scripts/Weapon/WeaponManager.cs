@@ -40,6 +40,7 @@ public class WeaponManager : MonoBehaviour
     public PlayerHealthController PlayerHealth;
     public PlotSystem PlotSystemObj;
     public ScoreSystem ScoreSystemObj;
+    public AudioSource GetItemAudioSource;
     
     public Firearms GetCarriedWeapon() => carriedWeapon;
 
@@ -142,7 +143,9 @@ public class WeaponManager : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.F))
                 {
                     PickupWeapon(tmpBaseItem);
-                    PickupAttachment(tmpBaseItem);
+                    // PickupAttachment(tmpBaseItem);
+                    GetItemAudioSource.clip = tmpFirearmsItem.SoundEffect;
+                    GetItemAudioSource.Play();
                 }
             }
             
@@ -159,6 +162,8 @@ public class WeaponManager : MonoBehaviour
                     {
                         PlayerHealth.AddHealth(tmpSuppliesItem.Value);
                         tmpSuppliesItem.DestroyItSelf();
+                        GetItemAudioSource.clip = tmpSuppliesItem.SoundEffect;
+                        GetItemAudioSource.Play();
                     }
                 }
                 
@@ -170,9 +175,10 @@ public class WeaponManager : MonoBehaviour
                     {
                         GetCarriedWeapon().CurrentMaxAmmoCarried += tmpSuppliesItem.Value;
                         tmpSuppliesItem.DestroyItSelf();
+                        GetItemAudioSource.clip = tmpSuppliesItem.SoundEffect;
+                        GetItemAudioSource.Play();
                     }
                 }
-                
             }
 
             // 关键道具
@@ -184,6 +190,8 @@ public class WeaponManager : MonoBehaviour
                     PlotSystemObj.AddMissionNum();
                     ScoreSystemObj.AddScore(500);
                     tmpMissionKeyItem.DestroyItSelf();
+                    GetItemAudioSource.clip = tmpMissionKeyItem.SoundEffect;
+                    GetItemAudioSource.Play();
                 }
             }
  
