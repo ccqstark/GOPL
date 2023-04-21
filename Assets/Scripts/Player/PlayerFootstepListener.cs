@@ -35,7 +35,7 @@ public class PlayerFootstepListener : MonoBehaviour
                 // 用来检测角色是否触地的最低端，也就是角色的脚
                 var detectEnd = footstepTransform.position + Vector3.down * (characterController.height / 2 +
                                                                              characterController.skinWidth +
-                                                                             Mathf.Abs(characterController.center.y));
+                                                                             Mathf.Abs(characterController.center.y) + 0.1f);
                 // 是否碰到地面
                 bool isHit = Physics.Linecast(footstepTransform.position, detectEnd, out RaycastHit hitInfo, LayerMask);
 
