@@ -15,7 +15,7 @@ public class PlayerHealthBar : MonoBehaviour
 
     private void Update()
     {
-        UpdateHealthBar(PlayerHealth.GetCurrentHealth(), 
+        UpdateHealthBar((int) PlayerHealth.GetCurrentHealth(), 
             PlayerHealth.GetMaxHealth());
     }
 

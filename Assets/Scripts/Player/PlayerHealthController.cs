@@ -9,7 +9,7 @@ using UnityEngine.UI;
 public class PlayerHealthController : MonoBehaviour
 {
     
-    public int CurrentHealth; // 当前血量
+    public float CurrentHealth; // 当前血量
 
     public int MaxHealth = 100; // 最大血量
 
@@ -23,12 +23,14 @@ public class PlayerHealthController : MonoBehaviour
 
     public GameOver GameOverObj;
     
-    public int GetCurrentHealth() => CurrentHealth;
+    public float GetCurrentHealth() => CurrentHealth;
     public int GetMaxHealth() => MaxHealth;
     
     void Start()
     {
         CurrentHealth = MaxHealth;
+        BeginRecoveryTime = 8f;
+        BreatheRecoverySpeed = 10f;
         BloodSplatterImage.enabled = false;
     }
     
@@ -61,7 +63,7 @@ public class PlayerHealthController : MonoBehaviour
     // 增加生命值
     public void AddHealth(float addValue)
     {
-        CurrentHealth += (int) addValue;
+        CurrentHealth += addValue;
         if (CurrentHealth > MaxHealth)
         {
             CurrentHealth = MaxHealth;
