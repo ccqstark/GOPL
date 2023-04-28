@@ -3,6 +3,8 @@
 
 本项目仅供游戏开发初学者学习使用
 
+<img src="./Image/Intro.png" width="600px" />
+
 ## 操作键位
 
 - 移动：WASD
@@ -21,19 +23,19 @@
 
 ## 第一人称控制
 
-将相机绑定在人物模型的头部位置，读取用户鼠标移动量并作为相机或人物GamObject的角度变化量，最后限制转动的上下限角度，最终实现第一份人称视角的控制。
+将相机绑定在人物模型的头部位置，读取用户鼠标移动量并作为相机或人物GamObject的角度变化量，最后限制转动的上下限角度，最终实现第一人称视角的控制。
 
-<img src="./Image/multiCamera.png" style="zoom: 50%;" />
+<img src="./Image/multiCamera.png" width="500px" />
 
 由于使用单Camera渲染的话会导致左图所示的枪械穿模问题，故使用Main Camera和Gun Camera分别渲染场景与持枪的手臂，最后叠加在一次呈现出最终画面，方可解决穿模问题（如右图）。
 
 对于人物移动时的手部动作，会根据移动速度来渐进变化，主要体现变化为空闲->行走->奔跑三个与移动速度相关的状态的转换，使用了Blend Tree来实现这个过渡转变，动画更加丝滑与自然。
 
-<img src="./Image/BlendTree.png" style="zoom: 50%;" />
+<img src="./Image/BlendTree.png" width="570px" />
 
 ## 射击反馈
 
-模拟真实射击手感，实现了以下效果
+为了模拟真实的射击手感，实现了以下效果
 
 - 后坐力
 - 屏幕/视角震动
@@ -68,11 +70,11 @@
 
 敌人有空闲、巡逻、察觉、追击、攻击、受伤、死亡多种状态，通过状态模式在代码层面实现有限状态机FSM，控制Animator中的State转换，让敌人在不同状态下实现不同的行为。以下是敌人的状态转换图：
 
-<img src="./Image/EnemyFSM.png" style="zoom: 50%;" />
+<img src="./Image/EnemyFSM.png" width="400px" />
 
 ### 自动寻路
 
-<img src="./Image/BakeNav.png" style="zoom: 50%;" />
+<img src="./Image/BakeNav.png" width="350px" />
 
 在把场景中的处于行走区域的物体设置为*Navigation Static*后，在*Window -> AI -> Navigation*面板进行参数设置并点击*Bake*后即可对地图中的可行走场景进行烘焙，Unity编辑器默认会以蓝色区域进行标注。而敌人在加上*Nav Mesh Agent*组件便可以用脚本控制其自动导航至指定目的地，从而实现对玩家的跟随追踪、随机巡逻等功能。
 
@@ -80,7 +82,7 @@
 
 原采用射线检测，后改为扇形范围检测。
 
-<img src="./Image/EnemyAttackArea.png" style="zoom:33%;" />
+<img src="./Image/EnemyAttackArea.png" width="400px" />
 
 ## 可拾取物
 
@@ -96,11 +98,11 @@
 
 ### 主菜单
 
-<img src="./Image/MainMenu.png" style="zoom:30%;" />
+<img src="./Image/MainMenu.png" width="600px" />
 
 ### HUD
 
-<img src="./Image/HUD.png" style="zoom: 33%;" />
+<img src="./Image/HUD.png" width="600px" />
 
 游戏主要实现了如上图的HUD显示，分别为：
 
