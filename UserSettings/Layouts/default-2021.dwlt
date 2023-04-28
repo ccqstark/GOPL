@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1280
     height: 718
   m_ShowMode: 4
-  m_Title: Hierarchy
+  m_Title: Project
   m_RootView: {fileID: 6}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -48,7 +48,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 22
+  controlID: 72
 --- !u!114 &3
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -59,21 +59,22 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 1
   m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: 
+  m_Name: TestRunnerWindow
   m_EditorClassIdentifier: 
   m_Children: []
   m_Position:
     serializedVersion: 2
-    x: 977.5
+    x: 930.5
     y: 0
-    width: 302.5
+    width: 349.5
     height: 668
-  m_MinSize: {x: 276, y: 71}
+  m_MinSize: {x: 101, y: 121}
   m_MaxSize: {x: 4001, y: 4021}
-  m_ActualView: {fileID: 14}
+  m_ActualView: {fileID: 12}
   m_Panes:
-  - {fileID: 14}
-  m_Selected: 0
+  - {fileID: 15}
+  - {fileID: 12}
+  m_Selected: 1
   m_LastSelected: 0
 --- !u!114 &4
 MonoBehaviour:
@@ -92,13 +93,13 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 251
-    height: 479
+    width: 292.5
+    height: 443
   m_MinSize: {x: 201, y: 221}
   m_MaxSize: {x: 4001, y: 4021}
-  m_ActualView: {fileID: 15}
+  m_ActualView: {fileID: 16}
   m_Panes:
-  - {fileID: 15}
+  - {fileID: 16}
   m_Selected: 0
   m_LastSelected: 0
 --- !u!114 &5
@@ -117,15 +118,15 @@ MonoBehaviour:
   m_Position:
     serializedVersion: 2
     x: 0
-    y: 479
-    width: 977.5
-    height: 189
+    y: 443
+    width: 930.5
+    height: 225
   m_MinSize: {x: 231, y: 271}
   m_MaxSize: {x: 10001, y: 10021}
-  m_ActualView: {fileID: 13}
+  m_ActualView: {fileID: 14}
   m_Panes:
-  - {fileID: 13}
-  - {fileID: 18}
+  - {fileID: 14}
+  - {fileID: 19}
   m_Selected: 0
   m_LastSelected: 1
 --- !u!114 &6
@@ -218,12 +219,12 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 977.5
+    width: 930.5
     height: 668
   m_MinSize: {x: 200, y: 200}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
-  controlID: 23
+  controlID: 64
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -243,12 +244,12 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 977.5
-    height: 479
+    width: 930.5
+    height: 443
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 24
+  controlID: 65
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -264,20 +265,308 @@ MonoBehaviour:
   m_Children: []
   m_Position:
     serializedVersion: 2
-    x: 251
+    x: 292.5
     y: 0
-    width: 726.5
-    height: 479
+    width: 638
+    height: 443
   m_MinSize: {x: 202, y: 221}
   m_MaxSize: {x: 4002, y: 4021}
-  m_ActualView: {fileID: 16}
+  m_ActualView: {fileID: 17}
   m_Panes:
-  - {fileID: 16}
   - {fileID: 17}
-  - {fileID: 12}
+  - {fileID: 18}
+  - {fileID: 13}
   m_Selected: 0
-  m_LastSelected: 2
+  m_LastSelected: 1
 --- !u!114 &12
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 13401, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_MinSize: {x: 100, y: 100}
+  m_MaxSize: {x: 4000, y: 4000}
+  m_TitleContent:
+    m_Text: Test Runner
+    m_Image: {fileID: 0}
+    m_Tooltip: 
+  m_Pos:
+    serializedVersion: 2
+    x: 930.5
+    y: 72
+    width: 348.5
+    height: 647
+  m_ViewDataDictionary: {fileID: 0}
+  m_OverlayCanvas:
+    m_LastAppliedPresetName: Default
+    m_SaveData: []
+  m_Spl:
+    ID: 135
+    splitterInitialOffset: 365
+    currentActiveSplitter: -1
+    realSizes:
+    - 296.5
+    - 280.5
+    relativeSizes:
+    - 0.5138648
+    - 0.48613518
+    minSizes:
+    - 32
+    - 32
+    maxSizes:
+    - 0
+    - 0
+    lastTotalSize: 577
+    splitSize: 6
+    xOffset: 0
+    m_Version: 1
+    oldRealSizes: 
+    oldMinSizes: 
+    oldMaxSizes: 
+    oldSplitSize: 0
+  m_TestTypeToolbarIndex: 0
+  m_PlayModeTestListGUI:
+    m_Window: {fileID: 12}
+    m_NewResultList:
+    - id: 1005
+      uniqueId: '[GOPL][suite]'
+      name: GOPL
+      fullName: GOPL
+      resultStatus: 1
+      duration: 9.331387
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 
+      parentUniqueId: 
+    - id: 1010
+      uniqueId: '[PlayMode][D:/Code/GOPL/Library/ScriptAssemblies/PlayMode.dll][suite]'
+      name: PlayMode.dll
+      fullName: D:/Code/GOPL/Library/ScriptAssemblies/PlayMode.dll
+      resultStatus: 1
+      duration: 9.166808
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1006
+      parentUniqueId: '[GOPL][suite]'
+    - id: 1007
+      uniqueId: PlayMode.dll/[PlayMode][PlayerHealthPlayerModeTest][suite]
+      name: PlayerHealthPlayerModeTest
+      fullName: PlayerHealthPlayerModeTest
+      resultStatus: 1
+      duration: 9.157037
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1010
+      parentUniqueId: '[PlayMode][D:/Code/GOPL/Library/ScriptAssemblies/PlayMode.dll][suite]'
+    - id: 1008
+      uniqueId: PlayMode.dll/PlayerHealthPlayerModeTest/[PlayMode][PlayerHealthPlayerModeTest.PlayerHealthPlayerModeTestSimplePasses]
+      name: PlayerHealthPlayerModeTestSimplePasses
+      fullName: PlayerHealthPlayerModeTest.PlayerHealthPlayerModeTestSimplePasses
+      resultStatus: 1
+      duration: 0.0119444
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1007
+      parentUniqueId: PlayMode.dll/[PlayMode][PlayerHealthPlayerModeTest][suite]
+    - id: 1009
+      uniqueId: PlayMode.dll/PlayerHealthPlayerModeTest/[PlayMode][PlayerHealthPlayerModeTest.PlayerHealthPlayerModeTestWithEnumeratorPasses]
+      name: PlayerHealthPlayerModeTestWithEnumeratorPasses
+      fullName: PlayerHealthPlayerModeTest.PlayerHealthPlayerModeTestWithEnumeratorPasses
+      resultStatus: 1
+      duration: 9.121349
+      messages: 
+      output: "\u6062\u590D\u7684\u751F\u547D\u503C:0.022345\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.09470899\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.019464\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.025712\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.025078\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.02531\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.024456\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.025568\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.043756\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.026623\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.025931\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.052093\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.026587\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.026302\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.023868\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.024056\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.044967\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.027557\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.024037\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.024631\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.03046\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.044858\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.024725\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.0268\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.024624\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.025918\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.023878\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.030593\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.040684\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.027384\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.027004\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.02557\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.041585\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.024478\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.026749\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.024454\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.025657\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.024177\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.099188\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.035253\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.024839\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.023395\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.0426\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.024877\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.02748\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.045476\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.029236\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.028673\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.024644\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.025922\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.0599\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.033004\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.025756\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.028725\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.026539\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.02832\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.023792\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.110885\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.01824\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.066886\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.034576\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.04128\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.050277\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.026262\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.026411\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.025567\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.066038\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.032587\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.024487\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.024233\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.023242\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.029596\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.024129\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.112148\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.112796\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.022526\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.050024\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.020318\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.191445\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.040077\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.023925\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.044603\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.024307\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.205784\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.066421\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.039972\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.205338\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.020793\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.027372\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.113958\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.020298\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.04726\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.059523\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.058422\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.05756\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.025529\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.023518\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.027229\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.024709\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.068398\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.030958\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.026772\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.027735\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.02485\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.025666\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.042939\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.04731\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.036941\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.051708\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.02454\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.024576\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.025606\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.02923\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.029414\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.024133\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.046349\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.031201\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.034552\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.032262\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.034061\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.033698\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.034341\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.03403\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.117862\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.064278\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.041006\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.034928\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.028533\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.03513\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.032822\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.035543\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.08322\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.032435\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.055454\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.028137\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.027709\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.02651\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.061703\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.023501\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.02727\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.065729\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.028409\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.024102\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.024934\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.025173\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.026041\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.024039\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.056274\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.024485\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.058109\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.025685\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.032677\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.024981\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.022378\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.025216\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.024054\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.053497\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.02711\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.023719\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.030903\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.051688\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.01949\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.026456\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.023569\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.025003\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.023604\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.194774\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.038898\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.02145\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.139619\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.023026\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.02392\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.048008\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.070553\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.08669201\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.020201\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.02576\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.024991\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.08465301\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.020997\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.080785\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.05149\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.082755\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.019665\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.068586\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.046204\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.020692\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.025417\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.025217\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.024489\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.044162\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.041317\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.07558399\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.030848\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.024686\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.022199\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.032275\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.022179\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.062733\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.02792\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.03187\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.066673\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.02587\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.027412\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.023957\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.025154\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.024674\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.051633\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.146663\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.021322\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.023894\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.026721\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.026901\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.041637\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.052948\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.024688\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.034115\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.060978\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.02692\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.024724\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.024866\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.026257\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.022984\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.047399\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.04609\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.083819\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.018838\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.024872\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.025994\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.023969\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.024911\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.063052\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.115194\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.052286\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.022631\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.06796\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.065738\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.019279\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.06887\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.035898\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.026613\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.02557\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.025277\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.095175\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.023849\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.024173\r\n\u6062\u590D\u7684\u751F\u547D\u503C:0.106337\r\n"
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1007
+      parentUniqueId: PlayMode.dll/[PlayMode][PlayerHealthPlayerModeTest][suite]
+    m_ResultText: PlayerHealthPlayerModeTestSimplePasses (0.012s)
+    m_ResultStacktrace: 
+    m_TestListState:
+      scrollPos: {x: 0, y: 0}
+      m_SelectedIDs: 0a9a1773
+      m_LastClickedID: 1930926602
+      m_ExpandedIDs: f40089ab8adfdef698b181faffffff7f
+      m_RenameOverlay:
+        m_UserAcceptedRename: 0
+        m_Name: 
+        m_OriginalName: 
+        m_EditFieldRect:
+          serializedVersion: 2
+          x: 0
+          y: 0
+          width: 0
+          height: 0
+        m_UserData: 0
+        m_IsWaitingForDelay: 0
+        m_IsRenaming: 0
+        m_OriginalEventType: 11
+        m_IsRenamingFilename: 0
+        m_ClientGUIView: {fileID: 0}
+      m_SearchString: 
+    m_TestRunnerUIFilter:
+      PassedHidden: 0
+      FailedHidden: 0
+      NotRunHidden: 0
+      m_SearchString: 
+      selectedCategoryMask: 0
+      availableCategories:
+      - Uncategorized
+    m_SelectedOption: 0
+  m_EditModeTestListGUI:
+    m_Window: {fileID: 12}
+    m_NewResultList:
+    - id: 1000
+      uniqueId: '[GOPL][suite]'
+      name: GOPL
+      fullName: GOPL
+      resultStatus: 1
+      duration: 0.1538617
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 
+      parentUniqueId: 
+    - id: 1006
+      uniqueId: '[EditMode][D:/Code/GOPL/Library/ScriptAssemblies/EditMode.dll][suite]'
+      name: EditMode.dll
+      fullName: D:/Code/GOPL/Library/ScriptAssemblies/EditMode.dll
+      resultStatus: 1
+      duration: 0.0207004
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1002
+      parentUniqueId: '[GOPL][suite]'
+    - id: 1003
+      uniqueId: EditMode.dll/[EditMode][PlayerHealthEditModeTest][suite]
+      name: PlayerHealthEditModeTest
+      fullName: PlayerHealthEditModeTest
+      resultStatus: 1
+      duration: 0.0200051
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1006
+      parentUniqueId: '[EditMode][D:/Code/GOPL/Library/ScriptAssemblies/EditMode.dll][suite]'
+    - id: 1004
+      uniqueId: EditMode.dll/PlayerHealthEditModeTest/[EditMode][PlayerHealthEditModeTest.PlayerHealthEditModeTestSimplePasses]
+      name: PlayerHealthEditModeTestSimplePasses
+      fullName: PlayerHealthEditModeTest.PlayerHealthEditModeTestSimplePasses
+      resultStatus: 1
+      duration: 0.0001432
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1003
+      parentUniqueId: EditMode.dll/[EditMode][PlayerHealthEditModeTest][suite]
+    - id: 1005
+      uniqueId: EditMode.dll/PlayerHealthEditModeTest/[EditMode][PlayerHealthEditModeTest.PlayerHealthEditModeTestWithEnumeratorPasses]
+      name: PlayerHealthEditModeTestWithEnumeratorPasses
+      fullName: PlayerHealthEditModeTest.PlayerHealthEditModeTestWithEnumeratorPasses
+      resultStatus: 1
+      duration: 0.0188834
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1003
+      parentUniqueId: EditMode.dll/[EditMode][PlayerHealthEditModeTest][suite]
+    m_ResultText: PlayerHealthEditModeTestWithEnumeratorPasses (0.019s)
+    m_ResultStacktrace: 
+    m_TestListState:
+      scrollPos: {x: 0, y: 0}
+      m_SelectedIDs: a30da485
+      m_LastClickedID: -2052846173
+      m_ExpandedIDs: 9803f7e38adfdef6bf895c16ffffff7f
+      m_RenameOverlay:
+        m_UserAcceptedRename: 0
+        m_Name: 
+        m_OriginalName: 
+        m_EditFieldRect:
+          serializedVersion: 2
+          x: 0
+          y: 0
+          width: 0
+          height: 0
+        m_UserData: 0
+        m_IsWaitingForDelay: 0
+        m_IsRenaming: 0
+        m_OriginalEventType: 11
+        m_IsRenamingFilename: 0
+        m_ClientGUIView: {fileID: 0}
+      m_SearchString: 
+    m_TestRunnerUIFilter:
+      PassedHidden: 0
+      FailedHidden: 0
+      NotRunHidden: 0
+      m_SearchString: 
+      selectedCategoryMask: 0
+      availableCategories:
+      - Uncategorized
+--- !u!114 &13
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -341,7 +630,7 @@ MonoBehaviour:
   m_CurrentEditor: 1
   m_LayerEditor:
     m_SelectedLayerIndex: 0
---- !u!114 &13
+--- !u!114 &14
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -362,9 +651,9 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 0
-    y: 551
-    width: 976.5
-    height: 168
+    y: 515
+    width: 929.5
+    height: 204
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
     m_LastAppliedPresetName: Default
@@ -382,22 +671,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Animators/Zombie
+    - Assets
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 16
   m_LastFolders:
-  - Assets/Animators/Zombie
+  - Assets
   m_LastFoldersGridSize: 16
   m_LastProjectPath: D:\Code\GOPL
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 133}
-    m_SelectedIDs: a8990000
-    m_LastClickedID: 39336
-    m_ExpandedIDs: 0000000096980000989800009a9800009c9800009e980000a0980000a2980000a4980000a6980000a8980000aa980000e8980000ea980000f498000000ca9a3b
+    scrollPos: {x: 0, y: 124}
+    m_SelectedIDs: 30950000
+    m_LastClickedID: 38192
+    m_ExpandedIDs: 00000000129500001495000016950000189500001a9500001c9500001e95000020950000229500002495000026950000289500002a9500003095000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -425,7 +714,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 0000000096980000989800009a9800009c9800009e980000a0980000a2980000a4980000a6980000a8980000aa980000
+    m_ExpandedIDs: 00000000129500001495000016950000189500001a9500001c9500001e95000020950000229500002495000026950000289500002a950000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -452,22 +741,22 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 1
+    m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: c6230000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: walk_zombie_animator
-      m_OriginalName: walk_zombie_animator
+      m_Name: 
+      m_OriginalName: 
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 37016
+      m_UserData: 0
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 0
+      m_OriginalEventType: 11
       m_IsRenamingFilename: 1
       m_ClientGUIView: {fileID: 5}
     m_CreateAssetUtility:
@@ -477,11 +766,11 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
     m_NewAssetIndexInList: -1
-    m_ScrollPosition: {x: 0, y: 0}
+    m_ScrollPosition: {x: 0, y: 51}
     m_GridSize: 16
   m_SkipHiddenPackages: 0
   m_DirectoriesAreaWidth: 207
---- !u!114 &14
+--- !u!114 &15
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -501,9 +790,9 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 977.5
+    x: 930.5
     y: 72
-    width: 301.5
+    width: 348.5
     height: 647
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
@@ -522,7 +811,7 @@ MonoBehaviour:
   m_LockTracker:
     m_IsLocked: 0
   m_PreviewWindow: {fileID: 0}
---- !u!114 &15
+--- !u!114 &16
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -544,8 +833,8 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 72
-    width: 250
-    height: 458
+    width: 291.5
+    height: 422
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
     m_LastAppliedPresetName: Default
@@ -553,9 +842,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: ae880000
-      m_LastClickedID: 34990
-      m_ExpandedIDs: 08fbffffac61000034870000
+      m_SelectedIDs: 88950000
+      m_LastClickedID: 0
+      m_ExpandedIDs: 08fbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -571,7 +860,7 @@ MonoBehaviour:
         m_IsRenaming: 0
         m_OriginalEventType: 11
         m_IsRenamingFilename: 0
-        m_ClientGUIView: {fileID: 0}
+        m_ClientGUIView: {fileID: 4}
       m_SearchString: 
     m_ExpandedScenes: []
     m_CurrenRootInstanceID: 0
@@ -579,7 +868,7 @@ MonoBehaviour:
       m_IsLocked: 0
     m_CurrentSortingName: TransformSorting
   m_WindowGUID: 4c969a2b90040154d917609493e03593
---- !u!114 &16
+--- !u!114 &17
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -599,10 +888,10 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 251
+    x: 292.5
     y: 72
-    width: 724.5
-    height: 458
+    width: 636
+    height: 422
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
     m_LastAppliedPresetName: Default
@@ -804,9 +1093,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 143.94148, y: 4.4350805, z: -35.297314}
+    m_Target: {x: 19.810621, y: 34.365433, z: 4.7049026}
     speed: 2
-    m_Value: {x: 143.94148, y: 4.4350805, z: -35.297314}
+    m_Value: {x: 19.810621, y: 34.365433, z: 4.7049026}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -853,13 +1142,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: 0.19212042, y: -0.2571981, z: 0.052130993, w: 0.94568413}
+    m_Target: {x: 0.067736916, y: -0.36813983, z: 0.026771678, w: 0.9269674}
     speed: 2
-    m_Value: {x: -0.19212042, y: 0.2571981, z: -0.052130993, w: -0.94568413}
+    m_Value: {x: -0.067736916, y: 0.3681398, z: -0.026771678, w: -0.9269674}
   m_Size:
-    m_Target: 8.303275
+    m_Target: 13.907419
     speed: 2
-    m_Value: 8.303275
+    m_Value: 13.907419
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -884,7 +1173,7 @@ MonoBehaviour:
   m_SceneVisActive: 1
   m_LastLockedObject: {fileID: 0}
   m_ViewIsLockedToObject: 0
---- !u!114 &17
+--- !u!114 &18
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -904,10 +1193,10 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 242
+    x: 292.5
     y: 72
-    width: 733.5
-    height: 351
+    width: 636
+    height: 422
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
     m_LastAppliedPresetName: Default
@@ -954,29 +1243,29 @@ MonoBehaviour:
       serializedVersion: 2
       x: 0
       y: 21
-      width: 733.5
-      height: 330
-    m_Scale: {x: 0.6111111, y: 0.6111111}
-    m_Translation: {x: 366.75, y: 165}
+      width: 636
+      height: 401
+    m_Scale: {x: 0.6625, y: 0.6625}
+    m_Translation: {x: 317.99997, y: 200.5}
     m_MarginLeft: 0
     m_MarginRight: 0
     m_MarginTop: 0
     m_MarginBottom: 0
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
-      x: -600.13635
-      y: -270
-      width: 1200.2727
-      height: 540
+      x: -479.99994
+      y: -302.6415
+      width: 959.99994
+      height: 605.283
     m_MinimalGUI: 1
-  m_defaultScale: 0.6111111
-  m_LastWindowPixelSize: {x: 1467, y: 702}
+  m_defaultScale: 0.6625
+  m_LastWindowPixelSize: {x: 1272, y: 844}
   m_ClearInEditMode: 1
   m_NoCameraWarning: 1
   m_LowResolutionForAspectRatios: 01000000000000000000
   m_XRRenderMode: 0
   m_RenderTexture: {fileID: 0}
---- !u!114 &18
+--- !u!114 &19
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -996,10 +1285,10 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 2249
-    y: 726.5
-    width: 920
-    height: 250
+    x: 0
+    y: 515
+    width: 929.5
+    height: 204
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
     m_LastAppliedPresetName: Default
